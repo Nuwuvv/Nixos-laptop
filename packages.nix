@@ -1,0 +1,36 @@
+{ pkgs, config, ... }:
+{
+ environment.systemPackages = with pkgs; [
+   waybar
+   eww
+   vim
+   neovim
+   kitty
+   dunst
+   libnotify
+   hyprpaper
+   neofetch
+   rofi-wayland
+   brave
+   librewolf
+   wget
+   btop
+   nnn
+   discord
+   linuxKernel.packages.linux_zen.xone
+   nvtopPackages.nvidia
+   networkmanagerapplet
+   obs-studio
+   keepassxc
+   grim
+   slurp
+   gimp3
+   usbutils
+   home-manager
+   yazi
+   cava
+   spotify
+   vlc
+   git
+ ];
+}
