@@ -34,6 +34,7 @@
         inherit pkgs;
         modules = [ 
           ./home.nix 
+         # stylix.homeManagerModules.stylix
         ];
       };
       nixosConfigurations = {

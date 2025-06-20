@@ -13,34 +13,11 @@
   home.username = "Nuuvv";
   home.homeDirectory = "/home/Nuuvv";
   imports = [
-   ./hyprland.nix
-   ./hyprpaper.nix
-   ./kitty.nix
-   ./stylix.nix
+   #./hyprland.nix
+   #./hyprpaper.nix
+   #./kitty.nix
+   #./stylix
    ];
-  
- # stylix = {
- #   enable = true;
- #   image = ./Wallpapers/Forest-night-painting-4k.png; #Gen colorscheme from this image
- #   polarity = "dark";
- #   opacity = {
- #     terminal = 0.8;
- #   };
- #   fonts = {
- #     monospace = {
- #       package = pkgs.jetbrains-mono;
- #       name = "JetBrainsMono Nerd Font Mono";
- #     };
- #     sansSerif = {
- #       package = pkgs.dejavu_fonts;
- #       name = "DejaVu Sans";
- #     };
- #     serif = {
- #       package = pkgs.dejavu_fonts;
- #       name = "DejaVu Serif";
- #     };
- #   };
- # };
   
   # Don't touch
   home.stateVersion = "25.05";

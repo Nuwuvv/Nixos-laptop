@@ -7,6 +7,9 @@
       ./packages.nix
       inputs.home-manager.nixosModules.home-manager
       ./stylix.nix
+      ./kitty
+      ./hyprland
+      ./hyrpaper
     ];
 
    nix.settings.auto-optimise-store = true;
