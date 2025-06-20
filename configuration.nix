@@ -9,8 +9,8 @@
       ./stylix.nix
     ];
 
-  nix.settings.auto-optimize-store = true;
-
+   nix.settings.auto-optimise-store = true;
+   
   # Home-manager
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
