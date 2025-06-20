@@ -9,6 +9,8 @@
       ./stylix.nix
     ];
 
+  nix.settings.auto-optimize-store = true;
+
   # Home-manager
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
@@ -77,40 +79,8 @@
      ];
    };
   
-   #Packages
-  # environment.systemPackages = with pkgs; [
-  #   #Easy temp bar (remove eventually)
-  #   waybar
-  #   eww #Big boi bar, diy don't be a bitch
-  #   vim
-  #   neovim
-  #   kitty
-  #   dunst #notification daemon
-  #   libnotify #dunst dependency
-  #   hyprpaper #wallpapers
-  #   neofetch
-  #   rofi-wayland #launcher, might change to bemenu
-  #   brave
-  #   librewolf
-  #   wget
-  #   btop
-  #   nnn
-  #   discord
-  #   linuxKernel.packages.linux_zen.xone #xbox one dongle
-  #   nvtopPackages.nvidia
-  #   networkmanagerapplet
-  #   obs-studio
-  #   keepassxc
-  #   grim
-  #   slurp
-  #   gimp3
-  #   usbutils
-  #   home-manager
-  #   yazi
-  #   cava
-  # ];
-
   nixpkgs.config.allowUnfree = true;
+
   # Steam
    programs.steam = {
      enable = true;
