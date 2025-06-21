@@ -13,10 +13,10 @@
   home.username = "Nuuvv";
   home.homeDirectory = "/home/Nuuvv";
   imports = [
-   #./hyprland.nix
-   #./hyprpaper.nix
-   #./kitty.nix
-   #./stylix
+   ./hyprland.nix
+   ./hyprpaper.nix
+   ./kitty.nix
+   ./stylix.nix
    ];
   
   # Don't touch

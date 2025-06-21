@@ -34,7 +34,7 @@
         inherit pkgs;
         modules = [ 
           ./home.nix 
-         # stylix.homeManagerModules.stylix
+          inputs.stylix.homeModules.stylix
         ];
       };
       nixosConfigurations = {
@@ -42,7 +42,7 @@
           specialArgs = { inherit inputs system; };
           modules = [
           ./configuration.nix
-          inputs.stylix.nixosModules.stylix
+          #inputs.stylix.nixosModules.stylix
           ];
         };
       };
