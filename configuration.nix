@@ -6,11 +6,15 @@
       ./hardware-configuration.nix
       ./packages.nix
       inputs.home-manager.nixosModules.home-manager
-      #./stylix.nix
       ./Syncthing.nix
     ];
 
    nix.settings.auto-optimise-store = true;
+   nix.gc = { 
+     automatic = true;
+     dates = "weekly";
+     options = "--delete-older-than 10d";
+   };
 
   # Home-manager
   home-manager = {
