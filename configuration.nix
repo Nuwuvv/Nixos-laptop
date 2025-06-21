@@ -11,7 +11,6 @@
     ];
 
    nix.settings.auto-optimise-store = true;
-   stylix.enable = true;
 
   # Home-manager
   home-manager = {

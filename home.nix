@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
  let
     startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
@@ -17,6 +17,7 @@
    ./hyprpaper.nix
    ./kitty.nix
    ./stylix.nix
+   inputs.stylix.homeModules.stylix
    ];
   
   # Don't touch
@@ -33,11 +34,5 @@
     EDITOR = "vim";
   };
 
-# wayland.windowManager.hyprland = {
-#    enable = true;
-#    settings = {
-#      exec-once = ''${startupScript}/bin/start''; 
-#    };
-#  };
   programs.home-manager.enable = true;
 }
