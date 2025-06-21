@@ -3,10 +3,10 @@
 {
   imports =
     [
-      ./hardware-configuration.nix
-      ./packages.nix
+      ./Modules/hardware-configuration.nix
+      ./Modules/packages.nix
       inputs.home-manager.nixosModules.home-manager
-      ./Syncthing.nix
+      ./Modules/Syncthing.nix
     ];
 
    nix.settings.auto-optimise-store = true;
@@ -20,7 +20,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      Nuuvv = import ./home.nix;
+      Nuuvv = import ./Modules/home-manager/home.nix;
     };
   };
   # Use the systemd-boot EFI boot loader.

@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/Forest-night-4k.png;
+   image = ../../Wallpapers/Forest-night-4k.png;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
