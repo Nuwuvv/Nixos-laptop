@@ -32,5 +32,9 @@
    spotify
    vlc
    git
+   davinci-resolve
+   audacity
+   krita
+   stremio
  ];
 }
