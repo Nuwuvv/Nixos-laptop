@@ -10,7 +10,7 @@
        "DP-4, 3840x2160@60, 4451x740, 1.5"
      ];
      workspace = [
-       "1, monitor:DP-5"
+       "1, monitor:DP-5, default:true"
        "2, monitor:HDMI-A-2"
        "3, monitor:DP-6"
        "4, monitor:DP-4"
@@ -127,6 +127,7 @@
        "$mainMod, R, togglesplit," # dwindle
        "$mainMod, F, fullscreen"
        "$mainMod, G, fullscreen, 1"
+       "$mainMod, T, fullscreenstate, 0 2"
        "$mainMod, H, movefocus, l"
        "$mainMod, L, movefocus, r"
        "$mainMod, I, movefocus, u"
@@ -155,6 +156,16 @@
        "$mainMod SHIFT, S, movetoworkspace, special:magic"
        "$mainMod, mouse_down, workspace, e+1"
        "$mainMod, mouse_up, workspace, e-1"
+       "$mainMod, B, togglespecialworkspace, magic"
+       "$mainMod, B, movetoworkspace, +0"
+       "$mainMod, B, togglespecialworkspace, magic"
+       "$mainMod, B, movetoworkspace, special:magic"
+       "$mainMod, B, togglespecialworkspace, magic"
+       "$mainMod, W, togglespecialworkspace, 2, magic"
+       "$mainMod, W, movetoworkspace, +0"
+       "$mainMod, W, togglespecialworkspace, 2, magic"
+       "$mainMod, W, movetoworkspace, special:magic"
+       "$mainMod, W, togglespecialworkspace, 2, magic"
      ];
      bindm = [
        "$mainMod, mouse:272, movewindow"
