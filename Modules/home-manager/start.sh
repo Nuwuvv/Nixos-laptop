@@ -6,8 +6,6 @@ nm-applet --indicator &
 
 # initializing Status Bar
 
-waybar &
-
 # initializing Wallpaper
 
 hyprpaper &

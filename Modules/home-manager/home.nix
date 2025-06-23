@@ -1,14 +1,5 @@
 { inputs, config, pkgs, ... }:
 
- let
-    startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-      nm-applet --indicator &
-      waybar &
-      wal -R &
-      dunst
-    '';
-  in
- 
 {
   home.username = "Nuuvv";
   home.homeDirectory = "/home/Nuuvv";

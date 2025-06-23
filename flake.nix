@@ -33,7 +33,7 @@
       homeConfigurations."Nuuvv" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ 
-          ./home.nix 
+          ./Modules/home-manager/home.nix 
           inputs.stylix.homeModules.stylix
         ];
       };
