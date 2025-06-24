@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 {
  environment.systemPackages = with pkgs; [
-   eww
+   waybar
    vim
    neovim
    kitty
