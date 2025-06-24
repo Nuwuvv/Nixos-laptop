@@ -6,7 +6,7 @@ nm-applet --indicator &
 
 # initializing Status Bar
 
-waybar &
+waybar -c ~/.config/waybar/config.ini ~/.config/waybar/style.css &
 
 # initializing Wallpaper
 
