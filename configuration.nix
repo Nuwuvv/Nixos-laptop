@@ -15,6 +15,13 @@
      dates = "weekly";
      options = "--delete-older-than 10d";
    };
+ 
+  # Bluetooth
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
+  services.blueman.enable = true;
 
   # Home-manager
   home-manager = {
