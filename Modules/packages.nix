@@ -34,5 +34,6 @@
    audacity
    krita
    stremio
+   wttrbar
  ];
 }
