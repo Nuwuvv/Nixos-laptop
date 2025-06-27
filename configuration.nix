@@ -40,6 +40,9 @@
   #Network Manager
   networking.networkmanager.enable = true;
 
+  #Player controller
+  services.playerctld.enable = true;
+
   # Timezone
   time.timeZone = "America/Buenos_Aires";
 
