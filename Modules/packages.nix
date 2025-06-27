@@ -18,7 +18,6 @@
    discord
    linuxKernel.packages.linux_zen.xone
    nvtopPackages.nvidia
-   networkmanagerapplet
    obs-studio
    keepassxc
    grim
