@@ -10,6 +10,7 @@
    ./stylix.nix
    inputs.stylix.homeModules.stylix
    ./waybar.nix
+   ./waybar-style.nix
    ];
   
   # Don't touch
