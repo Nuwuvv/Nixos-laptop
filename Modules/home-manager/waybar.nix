@@ -38,7 +38,7 @@
           waves = false;
           noise_reduction = 0.77;
           input_delay = 2;
-          format-icons = ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ];
+          format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
           actions = {
             on-click-right = "mode";
           };

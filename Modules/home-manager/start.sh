@@ -2,7 +2,7 @@
 
 # initializing Status Bar
 
-waybar -c ~/.config/waybar/config.ini &
+waybar &
 
 # initializing Wallpaper
 
