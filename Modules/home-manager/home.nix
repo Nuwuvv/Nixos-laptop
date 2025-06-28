@@ -9,6 +9,7 @@
    ./kitty.nix
    ./stylix.nix
    inputs.stylix.homeModules.stylix
+   ./waybar.nix
    ];
   
   # Don't touch
