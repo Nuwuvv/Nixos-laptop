@@ -21,8 +21,23 @@
           on-click-right = "grim -g \"$(slurp)\"";
         };
  
+        "hyprland/workspaces" = {
+          active-only = false;
+          all-outputs = true;
+          disable-scroll = false;
+          on-scroll-up = "hyprctl dispatch workspace e-1";
+          on-scroll-down = "hyprctl dispatch workspace e+1";
+          format = "{icon}";
+          on-click = "activate";
+          format-icons = {
+            urgent = "";
+            active = "";
+            default = "";
+          };
+          sort-by-number = true;
+        };
+
         "cava" = {
-          cava_config =  "$XDG_CONFIG_HOME/cava/config";
           framerate = 30;
           autosens = 1;
           sensitivity = 1;
@@ -43,6 +58,115 @@
             on-click-right = "mode";
           };
        };
+
+       "mpris" = {
+         format = "{player_icon}  {status_icon}  {title} - {artist}";
+         format-paused = "{player_icon}  {status_icon}  {title} - {artist}";
+         max-length = 20;
+         on-scroll-up = "playerctld shift";
+         on-scroll-down = "playerctld shift";
+         player-icons = {
+           default = "󰎈";
+           mpv = "";
+           vlc = "<span color='#E85E00'>󰕼</span>";
+           spotify = "<span color='#1DB954'></span>";
+           brave = "<span font='normal Font Awesome 6 Free' color='#ed7009'></span>";
+         };
+         status-icons = {
+           paused = "";
+           playing = "⏸";
+           stopped = "";
+         };
+       };
+
+       "bluetooth" = {
+         format-on = "󰂯";
+         format-off = "<span foreground='#f37061'>󰂲</span>";
+         on-click = "bluetoothctl power on";
+         on-click-right = "bluetoothctl power off";
+       };
+
+       "tray": {
+         icon-size = 21;
+         spacing = 10;
+       };
+
+       "hyprland/window" = {
+         format = "{}";
+         max-length = 35;
+         rewrite = {
+           "(.*) - Brave" = "<span font='normal Font Awesome 6 Free' color='#ed7009'></span> $1";
+           "(.*) - kitty" = " [$1]";
+           "(.*) - Discord" = "<span color='#ed7009'></span> $1";
+         };
+         separate-outputs = true;
+       };
+
+       "network" =  {
+         format = "{bandwidthDownBits} <span size='16000' foreground='#61f38d'>󰁈</span>  | {bandwidthUpBits} <span size='16000' foreground='#f37e8a'>󰁠</span>";
+         interval = 1;
+       };
+
+       "disk" = {
+         format = "  {}%";
+         format-alt = " {used}/{total} GiB";
+         interval = 20;
+         path = "/";
+       };
+
+       "memory" = {
+         format = "  {}%";
+         format-alt = "  {used}/{total} GiB";
+         interval = 5;
+       };
+
+       "cpu" = {
+         format = "󰍛  {usage}%";
+         format-alt = "󰍛 {avg_frequency} GHz";
+         interval = 5;
+       };
+
+       "pulseaudio" = {
+         format = "<span size='15000'>{icon}</span> {volume}%";
+         format-muted = "<span size='14000' foreground='#f37061'>󰝟</span> {volume}%";
+         format-icons = {
+           headphone = "";
+           hands-free = "";
+           headset = "";
+           phone = "";
+           portable = "";
+           car = "";
+           default = ["󰕿" "󰖀" "󰕾"];
+           on-click = "wpctl set-mute @DEFAULT_SINK@ toggle";
+           on-click-right = "./scripts/toggle-sinks.sh";
+           on-scroll-up = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+";
+           on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-";
+         };
+       };
+
+       "clock" = {
+         interval = 1;
+         format = " {:%a  %B %d    %H:%M}";
+         format-alt = "  {:%H:%M}";
+         tooltip-format = "<tt>{calendar}</tt>";
+         calendar = {
+           mode-mon-col = 3;
+           format = {
+             months = "<span color='#f3f3f3'><b>{}</b></span>";
+             weekdays = "<span color='#9e79f3'><b>{}</b></span>";
+             today = "<span color='#f36849'><b><u>{}</u></b></span>";
+             days = "<span size='10pt' color='#f3f3f3'><b>{}</b></span>";
+           };
+         };
+       };
+
+       "custom/weather" = {
+         format = "{}°";
+         tooltip = true;
+         interval = 600;
+         exec = "wttrbar --nerd";
+         return-type = "json";
+       }; 
      };
    };
  };

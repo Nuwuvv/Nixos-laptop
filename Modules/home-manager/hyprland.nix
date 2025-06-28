@@ -20,7 +20,7 @@
      "$menu" = "rofi -show drun -show-icons";
 
      exec-once = [
-       "bash ~/.config/Nixos/Modules/home-manager/start.sh"
+       "bash ~/.config/Nixos/Modules/home-manager/scripts/start.sh"
      ];
 
      env = [
