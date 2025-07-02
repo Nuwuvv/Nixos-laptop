@@ -10,7 +10,7 @@
        ];
        position = "top";
        layer = "top";
-       height = 14;
+       height = 25;
        modules-left = [ "custom/launcher" "hyprland/workspaces" "cava" "mpris" "bluetooth" "tray" ];
        modules-center = [ "hyprland/window" ];
        modules-right = [ "network" "disk" "memory" "cpu" "pulseaudio" "custom/weather" "clock" ];
@@ -62,14 +62,14 @@
        "mpris" = {
          format = "{player_icon}  {status_icon}  {title} - {artist}";
          format-paused = "{player_icon}  {status_icon}  {title} - {artist}";
-         max-length = 20;
+         max-length = 35;
          on-scroll-up = "playerctld shift";
          on-scroll-down = "playerctld shift";
          player-icons = {
            default = "󰎈";
            mpv = "";
            vlc = "<span color='#E85E00'>󰕼</span>";
-           spotify = "<span color='#1DB954'></span>";
+           spotify = "<span size='16000' color='#1DB954'></span>";
            brave = "<span font='normal Font Awesome 6 Free' color='#ed7009'></span>";
          };
          status-icons = {
@@ -80,8 +80,8 @@
        };
 
        "bluetooth" = {
-         format-on = "󰂯";
-         format-off = "<span foreground='#f37061'>󰂲</span>";
+         format-on = "<span size='14000'>󰂯</span>";
+         format-off = "<span size='14000' foreground='#f37061'>󰂲</span>";
          on-click = "bluetoothctl power on";
          on-click-right = "bluetoothctl power off";
        };
@@ -93,23 +93,23 @@
 
        "hyprland/window" = {
          format = "{}";
-         max-length = 35;
+         max-length = 45;
          rewrite = {
            "(.*) - Brave" = "<span font='normal Font Awesome 6 Free' color='#ed7009'></span> $1";
-           "(.*) - kitty" = " $1";
+           "(.*) - kitty" = "<span font='normal Font Awesome 6 Free' ></span> $1";
            "(.*) - Discord" = "<span color='#5378f3'></span> $1";
          };
          separate-outputs = true;
        };
 
        "network" =  {
-         format = "{bandwidthDownBits} <span size='16000' foreground='#61f38d'>󰁈</span>  | {bandwidthUpBits} <span size='16000' foreground='#f37e8a'>󰁠</span>";
+         format = "{bandwidthDownBits} <span size='18000' foreground='#61f38d'>󰁈</span>  | {bandwidthUpBits} <span size='18000' foreground='#f37e8a'>󰁠</span>";
          interval = 1;
        };
 
        "disk" = {
-         format = "  {}%";
-         format-alt = " {used}/{total} GiB";
+         format = "<span size='18000' ></span> {}%";
+         format-alt = "<span size='18000'></span> {used}/{total} GiB";
          interval = 20;
          path = "/";
        };
@@ -121,14 +121,14 @@
        };
 
        "cpu" = {
-         format = "󰍛  {usage}%";
-         format-alt = "󰍛 {avg_frequency} GHz";
+         format = "<span size='17000'>󰍛</span> {usage}%";
+         format-alt = "<span size='17000'>󰍛</span> {avg_frequency} GHz";
          interval = 5;
        };
 
        "pulseaudio" = {
          format = "<span size='15000'>{icon}</span> {volume}%";
-         format-muted = "<span size='14000' foreground='#f37061'>󰝟</span> {volume}%";
+         format-muted = " <span size='18000' foreground='#f37061'>󰝟</span> {volume}% ";
          format-icons = {
            headphone = "";
            hands-free = "";
@@ -220,7 +220,7 @@
 
        "pulseaudio" = {
          format = "<span size='15000'>{icon}</span> {volume}%";
-         format-muted = "<span size='14000' foreground='#f37061'>󰝟</span> {volume}%";
+         format-muted = " <span size='18000' foreground='#f37061'>󰝟</span> {volume}% ";
          format-icons = {
            headphone = "";
            hands-free = "";
@@ -288,7 +288,7 @@
        "mpris" = {
          format = "{player_icon}  {status_icon}  {title} - {artist}";
          format-paused = "{player_icon}  {status_icon}  {title} - {artist}";
-         max-length = 20;
+         max-length = 30;
          on-scroll-up = "playerctld shift";
          on-scroll-down = "playerctld shift";
          player-icons = {
@@ -312,7 +312,7 @@
 
        "hyprland/window" = {
          format = "{}";
-         max-length = 35;
+         max-length = 40;
          rewrite = {
            "(.*) - Brave" = "<span font='normal Font Awesome 6 Free' color='#ed7009'></span> $1";
            "(.*) - kitty" = " $1";
@@ -323,7 +323,7 @@
 
        "pulseaudio" = {
          format = "<span size='15000'>{icon}</span> {volume}%";
-         format-muted = "<span size='14000' foreground='#f37061'>󰝟</span> {volume}%";
+         format-muted = " <span size='18000' foreground='#f37061'>󰝟</span> {volume}% ";
          format-icons = {
            headphone = "";
            hands-free = "";

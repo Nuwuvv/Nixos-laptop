@@ -35,5 +35,6 @@
    krita
    stremio
    wttrbar
+   libgcc #gnu compiler collection
  ];
 }

@@ -30,7 +30,7 @@
 
      general = {
        "gaps_in" = "3";
-       "gaps_out" = "5"; 
+       "gaps_out" = "2,5,6,5"; 
        "border_size" = "0";
        "resize_on_border" = "false";
        "allow_tearing" = "false";
