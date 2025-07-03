@@ -11,6 +11,7 @@
    inputs.stylix.homeModules.stylix
    ./waybar.nix
    ./waybar-style.nix
+   ./nvim.nix
    ];
   
   # Don't touch
@@ -24,7 +25,7 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
   };
 
   programs.home-manager.enable = true;

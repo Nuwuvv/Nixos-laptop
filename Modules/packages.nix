@@ -2,8 +2,6 @@
 {
  environment.systemPackages = with pkgs; [
    waybar
-   vim
-   neovim
    kitty
    dunst
    libnotify

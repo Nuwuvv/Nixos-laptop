@@ -7,6 +7,9 @@
    opacity = {
      terminal = 0.8;
    };
+   targets = {
+     neovim.enable = false;
+   };
    fonts = {
      monospace = {
        package = pkgs.jetbrains-mono;
