@@ -1,4 +1,13 @@
 { config, pkgs, ... }:
+let
+  start-sh = pkgs.pkgs.writeShellScriptBin "start" ''
+    waybar &
+
+    hyprpaper &
+
+    dunst
+  '';
+in
 {
  wayland.windowManager.hyprland = {
    enable = true;
@@ -19,9 +28,7 @@
      "$fileManager" = "dolphin";
      "$menu" = "rofi -show drun -show-icons";
 
-     exec-once = [
-       "bash ~/.config/Nixos/Modules/home-manager/scripts/start.sh"
-     ];
+     exec-once = ''${start-sh}/bin/start'';
 
      env = [
        "XCURSOR_SIZE,24"

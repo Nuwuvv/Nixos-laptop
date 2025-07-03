@@ -4,8 +4,10 @@
     * {
       border: none;
       border-radius: 0px;
+      font-family: JetBrainsMono Nerd Fonts;
       font-size: 14px;
       font-style: normal;
+      font-weight: normal;
       min-height: 0px;
       padding: 0px;
       margin: 0px;
@@ -30,8 +32,8 @@
       border: solid 2px rgba(205,214,244,0.7);
       border-radius: 8px;
       margin: 5px 5px 5px 5px;
-      padding: 0px 10px 0px 10px;
-      font-size: 28;
+      padding: 0px 15px 1px 9px;
+      font-size: 25;
     }
 
     #workspaces {
@@ -53,20 +55,22 @@
       transition: all 0.3s ease-in-out;
     }
 
-    #workspaces button.active {
-      background-color: #cdd6f4;
-      border-radius: 16px;
-      min-width: 50px;
-      background-size: 400% 400%;
-      transition: all 0.3s ease-in-out;
-    }
-
     #workspaces button:hover {
       background-color: #cdd6f4;
       color: #cdd6f4;
       border-radius: 14px;
-      min-width: 50px;
+      min-width: 40px;
       background-size: 400% 400%;
+    }
+
+    #workspaces button.active {
+      background-color: #cdd6f4;
+      color: #cdd6f4;
+      border-radius: 14px;
+      min-width: 40px;
+      background-size: 400% 400%;
+      transition: all 0.3s ease-in-out;
+      border: 0px solid rgba(0, 0, 0, 0);
     }
 
     #cava {
@@ -87,7 +91,6 @@
       border: solid 2px rgba(205,214,244,0.7);
       margin: 5px 7px 5px 7px;
       padding: 0px 15px 0px 15px;
-      font-weight: bold;      
       font-size: 16;
     }
 
@@ -98,7 +101,6 @@
       border: solid 2px rgba(205,214,244,0.7);
       margin: 6px 7px 6px 7px;
       padding: 0px 10px 0px 10px;
-      font-weight: bold;
     }
 
     #tray {
@@ -114,7 +116,6 @@
       border-radius: 14px;
       border: solid 1px rgba(205,214,244,0.7);
       padding: 5px;
-      font-weight: bold;
     }
 
     #window {
@@ -126,6 +127,7 @@
       margin: 3px 0px 3px 0px;
       font-weight: normal;
       font-style: normal;
+      font-size: 16;
     }
 
     #network {
@@ -133,7 +135,6 @@
       border: solid 2px rgba(205,214,244,0.7);
       border-radius: 8px;
       /*color: #cdd6f4;*/
-      font-weight: bold;
       margin: 6px 5px 6px 5px;
       padding: 0px 15px 0px 15px;
     }
@@ -145,8 +146,7 @@
       border: solid 2px rgba(205,214,244,0.7);
       margin: 6px 5px 6px 5px;
       padding: 0px 10px 0px 10px;
-      font-weight: bold;
-      font-size: 16;
+      font-size: 14;
     }
 
     #memory {
@@ -156,8 +156,7 @@
       border: solid 2px rgba(205,214,244,0.7);
       margin: 6px 5px 6px 5px;
       padding: 0px 10px 0px 10px;
-      font-weight: bold;
-      font-size: 16;
+      font-size: 14;
     }
 
     #cpu {   
@@ -167,8 +166,7 @@
       border: solid 2px rgba(205,214,244,0.7);
       margin: 6px 5px 6px 5px;
       padding: 0px 10px 0px 10px;
-      font-weight: bold;
-      font-size: 16;
+      font-size: 14;
     }
 
     #pulseaudio {
@@ -178,18 +176,16 @@
       border: solid 2px rgba(205,214,244,0.7);
       margin: 6px 5px 6px 5px;
       padding: 0px 15px 0px 15px;
-      font-weight: bold;
-      font-size: 16;
+      font-size: 14;
     }
 
     #custom-weather {
       background-color: rgba(46,52,64,0.6);
       border-radius: 8px;
       border: solid 2px rgba(205,214,244,0.7);
-      padding-left: 13px;
+      padding-left: 17px;
       padding-right: 15px;
       margin: 6px 5px 6px 5px;
-      font-weight: bold;
       font-size: 16;
     }
 
@@ -199,9 +195,8 @@
       padding-left: 13px;
       padding-right: 15px;
       margin: 6px 5px 6px 5px;
-      font-weight: bold;
       border: solid 2px rgba(205,214,244,0.7);
-      font-size: 16;
+      font-size: 14;
     }
 
 

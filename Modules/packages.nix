@@ -7,7 +7,6 @@
    libnotify
    hyprpaper
    neofetch
-   rofi-wayland
    brave
    librewolf
    wget

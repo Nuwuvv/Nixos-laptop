@@ -9,6 +9,7 @@
    };
    targets = {
      neovim.enable = false;
+     waybar.enable = false;
    };
    fonts = {
      monospace = {

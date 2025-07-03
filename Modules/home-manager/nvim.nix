@@ -21,7 +21,7 @@
        vim.opt.expandtab = true
 
        -- Undobackups
-       vim.opt.undodir = "~/.vim/undodir"
+       vim.opt.undodir = ".vim/undodir"
        vim.opt.undofile = true
 
        -- yank to clipboard with leader remap

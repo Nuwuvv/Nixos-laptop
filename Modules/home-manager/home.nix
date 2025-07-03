@@ -12,6 +12,7 @@
    ./waybar.nix
    ./waybar-style.nix
    ./nvim.nix
+   ./rofi.nix
    ];
   
   # Don't touch
