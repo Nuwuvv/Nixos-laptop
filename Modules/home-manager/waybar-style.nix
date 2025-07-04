@@ -134,11 +134,18 @@
       background-color: rgba(46,52,64,0.6);
       border: solid 2px rgba(205,214,244,0.7);
       border-radius: 8px;
-      /*color: #cdd6f4;*/
       margin: 6px 5px 6px 5px;
       padding: 0px 15px 0px 15px;
     }
 
+    #custom-updates {
+      background-color: rgba(46,52,64,0.6);
+      border: solid 2px rgba(205,214,244,0.7);
+      border-radius: 8px;
+      margin: 6px 5px 6px 5px;
+      padding: 0px 15px 0px 15px;
+    }
+      
     #disk {
       background-color: rgba(46,52,64,0.6);
       color: #c68cff;

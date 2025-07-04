@@ -38,8 +38,12 @@ let
       gtk-dialog-info "Sound Sink Switcher" "Switching to ''$NEXT_SINK_ID : ''$NEXT_SINK_NAME (''$ALIAS)" [] {} 5000 | \
       sed 's/(uint32 \([0-9]\+\),)/\1/g' > /tmp/sss.id)
   '';
+     
 in  
 {
+ imports = [
+   ./updates-waybar.nix
+ ];
  programs.waybar = {
    enable = true;
    settings = {
@@ -53,7 +57,7 @@ in
        height = 25;
        modules-left = [ "custom/launcher" "hyprland/workspaces" "cava" "mpris" "bluetooth" "tray" ];
        modules-center = [ "hyprland/window" ];
-       modules-right = [ "network" "disk" "memory" "cpu" "pulseaudio" "custom/weather" "clock" ];
+       modules-right = [ "network" "custom/updates" "disk" "memory" "cpu" "pulseaudio" "custom/weather" "clock" ];
  
        "custom/launcher" = {
          format = "󱄅";

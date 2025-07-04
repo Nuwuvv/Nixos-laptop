@@ -38,7 +38,7 @@
         ];
       };
       nixosConfigurations = {
-       "Nuuvv" = nixpkgs.lib.nixosSystem {
+       "Nuuvv-Nix" = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs system; };
           modules = [
           ./configuration.nix

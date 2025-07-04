@@ -24,6 +24,21 @@
        vim.opt.undodir = ".vim/undodir"
        vim.opt.undofile = true
 
+       -- move highlighted stuff with J and K
+       vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+       vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+       -- Auto center when using Ctrl-d and Ctrl-u
+       vim.keymap.set("n", "<C-d>", "<C-d>zz")
+       vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+       -- Auto center when searching
+       vim.keymap.set("n", "n", "nzzzv")
+       vim.keymap.set("n", "N", "Nzzzv")
+
+       -- Leader p when pasting over highlighted deletes highlited text into void dir
+       vim.keymap.set("x", "<leader>p", "\"_dP")
+
        -- yank to clipboard with leader remap
        vim.keymap.set("n", "<leader>y", "\"+y")
        vim.keymap.set("v", "<leader>y", "\"+y")
