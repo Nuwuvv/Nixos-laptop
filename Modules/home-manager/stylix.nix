@@ -10,6 +10,7 @@
    targets = {
      neovim.enable = false;
      waybar.enable = false;
+     dunst.enable = false;
    };
    fonts = {
      monospace = {

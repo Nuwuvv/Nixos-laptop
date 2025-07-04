@@ -13,6 +13,7 @@
    ./waybar-style.nix
    ./nvim.nix
    ./rofi.nix
+   ./dunst.nix
    ];
   
   # Don't touch

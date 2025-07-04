@@ -3,7 +3,6 @@
  environment.systemPackages = with pkgs; [
    waybar
    kitty
-   dunst
    libnotify
    hyprpaper
    neofetch
