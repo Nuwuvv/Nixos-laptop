@@ -32,6 +32,5 @@
    stremio
    wttrbar
    nvd #dependency for update waybar module
-   nix #ditto
  ];
 }
