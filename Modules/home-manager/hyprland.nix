@@ -4,6 +4,8 @@ let
     waybar &
 
     hyprpaper &
+    
+    ssh-agent &
 
     dunst
   '';
