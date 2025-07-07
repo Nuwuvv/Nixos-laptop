@@ -22,6 +22,10 @@
     powerOnBoot = false;
   };
   services.blueman.enable = true;
+  
+  #start SSH agent
+
+  programs.ssh.startAgent = true;
 
   # Home-manager
   home-manager = {

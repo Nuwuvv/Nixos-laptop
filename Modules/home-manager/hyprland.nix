@@ -5,8 +5,6 @@ let
 
     hyprpaper &
     
-    ssh-agent &
-
     dunst
   '';
 in
