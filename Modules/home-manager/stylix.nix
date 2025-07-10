@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/field-sunset-ultrawide.png;
+   image = ./Wallpapers/Space-Cat-cartoon4k.png;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
