@@ -1,158 +1,107 @@
 { config, pkgs, ... }:
 {
-  programs.rofi = {
-    enable = true;
-    theme = 
-      let
-        inherit (config.lib.formats.rasi) mkLiteral;
-      in {
-        "#configuration" = {
-          modi = "drun,ssh";
-          display-drun = "";
-          display-ssh = "";
-          drun-display-format = "{name}";
-          window-format = "{w} . {c} . {t}";
-        };
-        "#window" = {
-          transparency = "real";
-          location = mkLiteral "center";
-          anchor = mkLiteral "center";
-          border = mkLiteral "2px";
-          border-color = mkLiteral "@foreground";
-          fullscreen = mkLiteral "false";
-          width = mkLiteral "800px";
-          x-offset = mkLiteral "0px";
-          y-offset = mkLiteral "0px";
-        };
-        "#mainbox" = {
-          enabled = mkLiteral "true";
-          spacing = mkLiteral "0px";
-          bakcground-color = mkLiteral "transparent";
-          orientation = mkLiteral "vertical";
-          children = map mkLiteral [ "inputbar" "listbox" ];
-        };
-        "#listbox" = {
-          spacing = mkLiteral "20px";
-          padding = mkLiteral "20px"; 
-          background-color = mkLiteral "transparent";
-          orientation = mkLiteral  "vertical";
-          border = mkLiteral "2px 0px 0px 0px";
-          border-color = mkLiteral "@foreground";
-          children = map mkLiteral [ "message" "listview" ];
-        };
-        "#inputbar" = {
-          enabled = mkLiteral "true";
-          spacing = mkLiteral "10px";
-          padding = mkLiteral "100px 60px";
-          background-color = mkLiteral "transparent";
-          background-image = mkLiteral "url(\"/home/Nuuvv/.config/Nixos/Modules/home-manager/Wallpapers/japan-night-painting-4k.png\", width)";
-          text-color = mkLiteral "@foreground";
-          orientation = mkLiteral "horizontal";
-          children = map mkLiteral [ "textbox-prompt-colon" "entry" "dummy" "mode-switcher" ];
-        };
-        "#textbox-prompt-colon" = {
-          enabled = mkLiteral "true";
-          expand = mkLiteral "false";
-          str = "";
-          padding = mkLiteral "12px 15px";
-          border-radius = mkLiteral "15px 5px 15px 5px";
-          text-color = mkLiteral "inherit";
-          size = mkLiteral "40px";
-        };
-        "#entry" = {
-          enabled = mkLiteral "true";
-          expand = mkLiteral "false";
-          width = mkLiteral "250px";
-          padding = mkLiteral "12px 16px";
-          border-radius = mkLiteral "5px 15px 5px 15px";
-          text-color = mkLiteral "inherit";
-          cursor = mkLiteral "text";
-          placeholder = "Search";
-          placeholder-color = mkLiteral "inherit";
-        };
-        "#dummy" = {
-          expand = mkLiteral "true";
-          background-color = mkLiteral "transparent";
-        };
-        "#listview" = {
-          enabled = mkLiteral "true";
-          columns = mkLiteral "2";
-          lines = mkLiteral "6";
-          cycle = mkLiteral "true";
-          dynamic = mkLiteral "true";
-          scrollbar = mkLiteral "false";
-          layout = mkLiteral "vertical";
-          reverse = mkLiteral "false";
-          fixed-height = mkLiteral "true";
-          fixed-columns = mkLiteral "true";
-          spacing = mkLiteral "10px";
-          background-color = mkLiteral "transparent";
-          text-color = mkLiteral "@foreground";
-          cursor = "default";
-        };
-        "#element" = {
-          enabled = mkLiteral "true";
-          spacing = mkLiteral "10px";
-          padding = mkLiteral "12px";
-          border-radius = mkLiteral "15px 5px 15px 5px";
-          background-color = mkLiteral "transparent";
-          text-color = mkLiteral "@foreground";
-          cursor = mkLiteral "pointer";
-        };
-        "#element normal.normal" = {
-          background-color = mkLiteral "inherit";
-          text-color = mkLiteral "inherit";
-        };
-        "#element normal.urgent" = {
-          background-color = mkLiteral "@urgent";
-          text-color = mkLiteral "@foreground";
-        };
-        "#element normal.active" = {
-          background-color = mkLiteral "@active";
-          text-color = mkLiteral "@foreground";
-        };
-        "#element selected.normal" = {
-          background-color = mkLiteral "@selected";
-          text-color = mkLiteral "@background";
-        };
-        "#element selected.urgent" = {
-          background-color = mkLiteral "@urgent";
-          text-color = mkLiteral "@foreground";
-        };
-        "#element selected.active" = {
-          background-color = mkLiteral "@urgent";
-          text-color = mkLiteral "@foreground";
-        };
-        "#element-icon" = {
-          background-color = mkLiteral "transparent";
-          text-color = mkLiteral "inherit";
-          size = mkLiteral "32px";
-          cursor = mkLiteral "inherit";
-        };
-        "#element-text" = {
-          background-color = mkLiteral "transparent";
-          text-color = mkLiteral "inherit";
-          cursor = mkLiteral "inherit";
-          vertical-align = mkLiteral "0.5";
-          horizontal-align = mkLiteral "0.0";
-        };
-        "#message" = {
-          background-color = mkLiteral "transparent";
-        };
-        "#textbox" = {
-          padding = mkLiteral "12px";
-          border-radius = mkLiteral "15px 5px 15px 5px";
-          text-color = mkLiteral "@foreground";
-          vertical-align = mkLiteral "0.5";
-          horizontal-align = mkLiteral "0.0";
-        };
-        "#error-message" = {
-          padding = mkLiteral "12px";
-          border-radius = mkLiteral "0px";
-          background-color = mkLiteral "@background";
-          text-color = mkLiteral "@foreground";
-        };
-      
-    };
-  };  
+ programs.rofi = {
+   enable = true;
+   font = "JetBrains Mono Nerd Font 10";
+   modes = [ "drun" "run" ];
+   package = pkgs.rofi-wayland;
+   theme = 
+     let
+       inherit (config.lib.formats.rasi) mkLiteral;
+     in {
+       
+       "#configuration" = {
+         show-icons = true;
+         drun-display-format = "{name}";
+         hover-select = true;
+       };
+
+       "*" = {
+         background-color = mkLiteral "transparent";
+         text-color = mkLiteral "#c9eafd";
+       };
+
+       "#window" = {
+         location = mkLiteral "center";
+         anchor = mkLiteral "center";
+         border = mkLiteral "1px";
+         border-radius = mkLiteral "30px";
+         background-color = mkLiteral "transparent";
+         width = mkLiteral "30%";
+       };
+
+       "#mainbox" = {
+         children = map mkLiteral [ "img" "listbox" ];
+         orientation = mkLiteral "horizontal";
+         background-color = mkLiteral "transparent";
+         spacing = mkLiteral "24px";
+       };
+
+       "#listbox" = {
+         spacing = mkLiteral "20px";
+         background-color = mkLiteral "transparent";
+         orientation = mkLiteral "vertical";
+         children = map mkLiteral [ "inputbar" "message" "listview" ];
+       };
+
+       "#listview" = {
+         background-color = mkLiteral "#03294099";
+         text-color = mkLiteral "#c9eafd";
+         border-radius = mkLiteral "30px";
+         columns = mkLiteral "2";
+         lines = mkLiteral "6";
+         cycle = true;
+         dynamic = true;
+         scrollbar = false;
+         layout = mkLiteral "vertical";
+         reverse = false;
+         fixed-height = true;
+         fixed-columns = true;
+       };
+
+       "#img" = {
+         padding = mkLiteral "64px 128px";
+         border-radius = mkLiteral "24px";
+         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/japan-night-painting-4k.png\", height)";
+       };
+
+       "#inputbar" = {
+         children = map mkLiteral [ "textbox-icon" "entry" ];
+         border-radius = mkLiteral "12px";
+         background-color = mkLiteral "#03294099";
+         spacing = mkLiteral "0px";
+         margin = mkLiteral "0px";
+         padding = mkLiteral "14px";
+       };
+
+       "#textbox-icon" = {
+         expand = false;
+         background-color = mkLiteral "transparent";
+         text-color = mkLiteral "#c9eafd";
+         str = "  ";
+       };
+
+       "#entry" = {
+         cursor = mkLiteral "text";
+         expand = false;
+         placeholder-color = mkLiteral "inherit";
+         placeholder = "Search";
+         background-color = mkLiteral "transparent";
+         text-color = mkLiteral "#c9eafd";
+       };
+
+       "#element" = {
+         background-color = mkLiteral "transparent";
+         border-radius = mkLiteral "10px";
+         padding = mkLiteral "12px";
+       };
+
+       "element-text" = {
+         background-color = mkLiteral "transparent";
+         text-color = mkLiteral "inherit";
+         vertical-align = mkLiteral "0.5";
+         horizontal-align = mkLiteral "0.0";
+       };
+   };
+ };
 }

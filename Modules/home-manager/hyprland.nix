@@ -26,7 +26,7 @@ in
      ];
      "$terminal" = "kitty -1";
      "$fileManager" = "dolphin";
-     "$menu" = "rofi -show drun -show-icons";
+     "$menu" = "rofi -show drun -show-icons"; 
 
      exec-once = ''${start-sh}/bin/start'';
 

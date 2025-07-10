@@ -11,6 +11,7 @@
      neovim.enable = false;
      waybar.enable = false;
      dunst.enable = false;
+     rofi.enable = false;
    };
    fonts = {
      monospace = {
