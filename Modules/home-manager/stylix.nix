@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/Space-Cat-cartoon4k.png;
+   image = ./Wallpapers/tokyo-night-4k.png;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
