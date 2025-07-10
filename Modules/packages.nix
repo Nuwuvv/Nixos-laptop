@@ -2,10 +2,10 @@
 {
  environment.systemPackages = with pkgs; [
    waybar
+   fastfetch
    kitty
    libnotify
    hyprpaper
-   neofetch
    brave
    librewolf
    wget
