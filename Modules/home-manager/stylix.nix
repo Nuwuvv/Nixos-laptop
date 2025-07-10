@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/japan-night-painting-4k.png;
+   image = ./Wallpapers/field-sunset-ultrawide.png;
    polarity = "dark";
    opacity = {
      terminal = 0.8;

@@ -2,7 +2,7 @@
 {
  environment.systemPackages = with pkgs; [
    waybar
-   fastfetch
+   neofetch
    kitty
    libnotify
    hyprpaper
@@ -11,7 +11,7 @@
    wget
    btop
    nnn
-   discord
+   legcord
    linuxKernel.packages.linux_zen.xone
    nvtopPackages.nvidia
    obs-studio
@@ -32,5 +32,6 @@
    stremio
    wttrbar
    nvd #dependency for update waybar module
+   spotify-player
  ];
 }

@@ -22,6 +22,12 @@
     powerOnBoot = false;
   };
   services.blueman.enable = true;
+
+  # sleep on inactivity
+  services.logind.extraConfig = ''
+    IdleAction=hybrid-sleep
+    IdleActionSec=15min
+  '';
   
   #start SSH agent
 
