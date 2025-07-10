@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/vaporwave-album-cover-monochrome-1080p.png;
+   image = ./Wallpapers/Sea-city-painting-4k.png;
    polarity = "dark";
    opacity = {
      terminal = 0.8;

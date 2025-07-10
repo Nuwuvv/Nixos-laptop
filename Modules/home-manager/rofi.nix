@@ -27,7 +27,7 @@
          border = mkLiteral "1px";
          border-radius = mkLiteral "30px";
          background-color = mkLiteral "transparent";
-         width = mkLiteral "30%";
+         width = mkLiteral "38%";
        };
 
        "#mainbox" = {
@@ -60,9 +60,10 @@
        };
 
        "#img" = {
-         padding = mkLiteral "64px 250px";
+         padding = mkLiteral "64px 200px";
+         vertical-align = mkLiteral "0.8";
          border-radius = mkLiteral "24px";
-         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/vaporwave-album-cover-monochrome-1080p.png\", height)";
+         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/Sea-city-painting-4k.png\", height)";
        };
 
        "#inputbar" = {
