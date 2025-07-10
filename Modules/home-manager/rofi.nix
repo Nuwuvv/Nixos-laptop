@@ -63,7 +63,7 @@
          padding = mkLiteral "0px 0px";
          center = true;
          border-radius = mkLiteral "24px";
-         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/field-sunset-ultrawide/png\", height)";
+         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/field-sunset-ultrawide.png\", height)";
        };
 
        "#inputbar" = {
