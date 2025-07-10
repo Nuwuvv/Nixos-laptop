@@ -60,7 +60,7 @@
        };
 
        "#img" = {
-         padding = mkLiteral "0px 0px";
+         padding = mkLiteral "64px 128px";
          border-radius = mkLiteral "24px";
          background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/vaporwave-album-cover-monochrome-1080p.png\", height)";
        };
