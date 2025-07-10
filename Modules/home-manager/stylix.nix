@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/Sea-city-painting-4k.png;
+   image = ./Wallpapers/fantasy-house-painting-ultrawide.png;
    polarity = "dark";
    opacity = {
      terminal = 0.8;

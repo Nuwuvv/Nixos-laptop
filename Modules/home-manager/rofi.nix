@@ -63,7 +63,7 @@
          padding = mkLiteral "64px 200px";
          vertical-align = mkLiteral "0.8";
          border-radius = mkLiteral "24px";
-         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/Sea-city-painting-4k.png\", height)";
+         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/fantasy-house-painting-ultrawide.png\", height)";
        };
 
        "#inputbar" = {
