@@ -62,7 +62,7 @@
        "#img" = {
          padding = mkLiteral "0px 0px";
          border-radius = mkLiteral "24px";
-         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/tokyo-night-4k.png\", hight)";
+         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/tokyo-night-4k.png\", height)";
        };
 
        "#inputbar" = {
