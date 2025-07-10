@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/tokyo-night-4k.png;
+   image = ./Wallpapers/vaporwave-album-cover-monochrome-1080p.png;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
