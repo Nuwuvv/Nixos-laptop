@@ -61,8 +61,6 @@
 
        "#img" = {
          padding = mkLiteral "0px 0px";
-         margin-left = mkLiteral "auto";
-         margin-right = mkLiteral "auto";
          border-radius = mkLiteral "24px";
          background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/field-sunset-ultrawide.png\", height)";
        };
