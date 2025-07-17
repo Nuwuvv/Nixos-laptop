@@ -29,6 +29,18 @@
     [ { device = "/dev/disk/by-uuid/a6cbd95b-e824-4a02-a5f5-f6786ec0b6f2"; }
     ];
 
+  fileSystems."home/Nuuvv/Drives/4tb-wd-m.2" =
+    { device = "/dev/disk/by-uuid/19b674f0-e465-4273-84fe-ab3226772e74";
+      fsType = "ext4";
+      options = [ "noatime" "nodiratime" "discard" ];
+    };
+
+  fileSystems."home/Nuuvv/Drives/2tb-sam-m.2" =
+    { device = "/dev/disk/by-uuid/3e5eaeeb-5083-4252-bffc-66682995ced8";
+      fsType = "ext4";
+      options = [ "noatime" "nodiratime" "discard" ];
+    };
+
   #try to fix monitor resolution
   boot.kernelParams = ["nvidia_drm.fbdev=1"];
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

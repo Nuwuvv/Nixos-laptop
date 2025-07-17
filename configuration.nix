@@ -23,12 +23,6 @@
   };
   services.blueman.enable = true;
 
-  # sleep on inactivity
-  services.logind.extraConfig = ''
-    IdleAction=hybrid-sleep
-    IdleActionSec=15min
-  '';
-  
   #start SSH agent
 
   programs.ssh.startAgent = true;
@@ -118,6 +112,14 @@
    hardware.steam-hardware.enable = true;
    hardware.xone.enable = true;
 
+   xdg.portal = {
+     enable = true;
+     extraPortals = with pkgs; [xdg-desktop-portal-gtk];
+     config = {
+       common.default = ["gtk"];
+     };
+   };
+
   # Fonts
    fonts.packages = with pkgs; [
      nerd-fonts.noto
@@ -133,11 +135,6 @@
      nerd-fonts.jetbrains-mono
      material-design-icons
    ];
-
-  # Portals screensharing and other interactions
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-
 
   # Open ports in the firewall.
     # Syncthing ports: 8384 for remote access to GUI

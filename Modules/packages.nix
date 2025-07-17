@@ -11,7 +11,7 @@
    wget
    btop
    nnn
-   legcord
+   discord
    linuxKernel.packages.linux_zen.xone
    nvtopPackages.nvidia
    obs-studio
@@ -33,5 +33,6 @@
    wttrbar
    nvd #dependency for update waybar module
    spotify-player
+   dysk
  ];
 }

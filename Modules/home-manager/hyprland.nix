@@ -1,11 +1,13 @@
 { config, pkgs, ... }:
 let
   start-sh = pkgs.pkgs.writeShellScriptBin "start" ''
-    waybar &
-
     hyprpaper &
     
-    dunst
+    dunst &
+
+    hyprctl setcursor Duccursor 1 &
+    
+    waybar 
   '';
 in
 {
@@ -31,8 +33,11 @@ in
      exec-once = ''${start-sh}/bin/start'';
 
      env = [
+       #"HYPRCURSOR_SIZE,24"
+       #"HYPRCURSOR_THEME,Duccursor"
+       #"WLR_NO_HARDWARE_CURSORS,1"
+       #"XCURSOR_THEME,Duccursor"
        "XCURSOR_SIZE,24"
-       "HYPRCURSOR_SIZE,24"
      ];
 
      general = {

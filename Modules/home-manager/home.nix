@@ -1,9 +1,9 @@
 { inputs, config, pkgs, ... }:
 
 {
-  home.username = "Nuuvv";
-  home.homeDirectory = "/home/Nuuvv";
-  imports = [
+ home.username = "Nuuvv";
+ home.homeDirectory = "/home/Nuuvv";
+ imports = [
    ./hyprland.nix
    ./hyprpaper.nix
    ./kitty.nix
@@ -14,21 +14,21 @@
    ./nvim.nix
    ./rofi.nix
    ./dunst.nix
-   ];
-  
-  # Don't touch
-  home.stateVersion = "25.05";
+ ];
 
-  home.packages = with pkgs; [
-  ];
+ # Don't touch
+ home.stateVersion = "25.05";
 
-  home.file = {
+ home.packages = with pkgs; [
+ ];
 
-  };
+ home.file = {
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+ };
 
-  programs.home-manager.enable = true;
+ home.sessionVariables = {
+   EDITOR = "nvim";
+ };
+
+ programs.home-manager.enable = true;
 }

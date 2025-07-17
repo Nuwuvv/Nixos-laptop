@@ -173,9 +173,9 @@ in
          format = "<span size='15000'>{icon}</span>  {volume}%";
          format-muted = "<span size='15000' foreground='#f37061'>󰝟</span>  {volume}%";
          format-icons = {
-           headphone = "";
+           headphone = " ";
            hands-free = "";
-           headset = "";
+           headset = " ";
            phone = "";
            portable = "";
            car = "";
@@ -265,9 +265,9 @@ in
          format = "<span size='15000'>{icon}</span>  {volume}%";
          format-muted = "<span size='15000' foreground='#f37061'>󰝟</span>  {volume}%";
          format-icons = {
-           headphone = "";
+           headphone = " ";
            hands-free = "";
-           headset = "";
+           headset = " ";
            phone = "";
            portable = "";
            car = "";
@@ -368,9 +368,9 @@ in
          format = "<span size='15000'>{icon}</span>  {volume}%";
          format-muted = "<span size='15000' foreground='#f37061'>󰝟</span>  {volume}%";
          format-icons = {
-           headphone = "";
+           headphone = " ";
            hands-free = "";
-           headset = "";
+           headset = " ";
            phone = "";
            portable = "";
            car = "";
