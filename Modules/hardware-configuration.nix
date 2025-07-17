@@ -35,6 +35,12 @@
       options = [ "noatime" "nodiratime" "discard" ];
     };
 
+    fileSystems."home/Nuuvv/Drives/2tb-sam-ssd" =
+    { device = "/dev/disk/by-uuid/b4a57b67-083d-4c36-b562-5876756a2723";
+      fsType = "ext4";
+      options = [ "noatime" "nodiratime" "discard" ];
+    };
+
   fileSystems."home/Nuuvv/Drives/2tb-sam-m.2" =
     { device = "/dev/disk/by-uuid/3e5eaeeb-5083-4252-bffc-66682995ced8";
       fsType = "ext4";

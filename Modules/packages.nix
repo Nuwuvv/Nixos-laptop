@@ -34,5 +34,6 @@
    nvd #dependency for update waybar module
    spotify-player
    dysk
+   unzip
  ];
 }
