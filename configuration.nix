@@ -7,6 +7,8 @@
       ./Modules/packages.nix
       inputs.home-manager.nixosModules.home-manager
       ./Modules/Syncthing.nix
+      ./Modules/VM.nix
+      ./Modules/Gpu-passthrough.nix
     ];
 
    nix.settings.auto-optimise-store = true;
@@ -140,6 +142,7 @@
     # Syncthing ports: 8384 for remote access to GUI
    networking.firewall.allowedTCPPorts = [ 8384 22000 ];
    networking.firewall.allowedUDPPorts = [ 22000 21027 ];
+   networking.firewall.trustedInterfaces = [ "virbr0" "virtio" ];
   # networking.firewall.allowedTCPPorts = [ ... ];
 
   # Flakey boi

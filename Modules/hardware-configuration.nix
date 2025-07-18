@@ -47,6 +47,12 @@
       options = [ "noatime" "nodiratime" "discard" ];
     };
 
+  fileSystems."home/Nuuvv/Drives/500Gb-Gig-ssd" =
+    { device = "/dev/disk/by-uuid/ef014d1e-5c46-4c61-be60-808cd1a812ee";
+      fsType = "ext4";
+      options = [ "noatime" "nodiratime" "discard" ];
+    };
+
   #try to fix monitor resolution
   boot.kernelParams = ["nvidia_drm.fbdev=1"];
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
