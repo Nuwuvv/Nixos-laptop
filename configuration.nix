@@ -38,8 +38,22 @@
   };
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  #boot.loader.systemd-boot.enable = true;
+  #boot.loader.efi.canTouchEfiVariables = true;
+  # Use GRUB to boot like a real MAN
+  boot.loader = {
+    systemd-boot.enable = false;
+    grub = {
+      enable = true;
+      useOSProber = true;
+      device = "nodev";
+      efiSupport = true;
+    };
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
+    };
+  };
 
   networking.hostName = "Nuuvv-Nix"; # Define your hostname.
 
@@ -75,7 +89,7 @@
   hardware.graphics = {
     enable = true;
   };
-  # Load nvidia driver for Wayland
+    # Load nvidia driver for Wayland
   services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {

@@ -17,5 +17,6 @@
     virt-manager
     qemu
     libvirt
+    OVMF
   ];
 }
