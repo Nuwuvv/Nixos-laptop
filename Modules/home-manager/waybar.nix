@@ -114,6 +114,7 @@ in
            mpv = "";
            vlc = "<span color='#E85E00'>󰕼</span>";
            spotify = "<span size='13000' color='#1DB954'></span>";
+           spotify_player = "<span size='13000' color='#1DB954'></span>";
            brave = "<span font='normal Font Awesome 6 Free' color='#ed7009'></span>";
          };
          status-icons = {
@@ -339,6 +340,7 @@ in
            mpv = "";
            vlc = "<span color='#E85E00'>󰕼</span>";
            spotify = "<span color='#1DB954'></span>";
+           spotify_player = "<span size='13000' color='#1DB954'></span>";
            brave = "<span font='normal Font Awesome 6 Free' color='#ed7009'></span>";
          };
          status-icons = {
