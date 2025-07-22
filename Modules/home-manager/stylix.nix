@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/fantasy-dragon-art-ultrawide.jpg;
+   image = ./Wallpapers/pastel-pink-planet-ultrawide.jpg;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
