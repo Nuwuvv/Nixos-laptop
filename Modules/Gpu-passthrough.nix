@@ -9,6 +9,5 @@
       ]; 
       kernelModules = [ "vfio_pci" "vfio_iommu_type1" "vfio" ];
       blacklistedKernelModules = [ "nvidia" "nouveau" ];
-      extraModprobeConfig = "options vfio-pci ids=10de:1b06,10de:10ef";
     };
 }

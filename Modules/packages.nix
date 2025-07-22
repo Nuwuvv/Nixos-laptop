@@ -35,5 +35,6 @@
    spotify-player
    dysk
    unzip
+   nh
  ];
 }

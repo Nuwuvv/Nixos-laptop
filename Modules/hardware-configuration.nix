@@ -19,7 +19,7 @@
       options = [ "noatime" "nodiratime" "discard" ];
     };
 
-  fileSystems."/boot" =
+  fileSystems."/boot/efi" =
     { device = "/dev/disk/by-uuid/C158-0F59";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];

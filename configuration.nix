@@ -11,12 +11,16 @@
       ./Modules/Gpu-passthrough.nix
     ];
 
-   nix.settings.auto-optimise-store = true;
-   nix.gc = { 
-     automatic = true;
-     dates = "weekly";
-     options = "--delete-older-than 10d";
-   };
+  #Use latest kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  #Nix store optimizations and Garbage collection
+  nix.settings.auto-optimise-store = true;
+  nix.gc = { 
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 10d";
+  };
  
   # Bluetooth
   hardware.bluetooth = {
@@ -25,8 +29,12 @@
   };
   services.blueman.enable = true;
 
-  #start SSH agent
+  # Nh environment variable
+  environment.sessionVariables = {
+    NH_FLAKE = "/home/Nuuvv/.config/Nixos";
+  };
 
+  #start SSH agent
   programs.ssh.startAgent = true;
 
   # Home-manager
