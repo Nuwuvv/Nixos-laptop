@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/pastel-pink-planet-ultrawide.jpg;
+   image = ./Wallpapers/underwater-city-ultrawide.jpg;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
