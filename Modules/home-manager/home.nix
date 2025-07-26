@@ -14,6 +14,7 @@
    ./nvim.nix
    ./rofi.nix
    ./dunst.nix
+   ./fastfetch.nix
  ];
 
  # Don't touch
