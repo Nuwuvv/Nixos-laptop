@@ -37,5 +37,6 @@
    unzip
    nh
    libreoffice-qt6-fresh
+   ffmpeg #dependency for fastfetch
  ];
 }
