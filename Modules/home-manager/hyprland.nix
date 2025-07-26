@@ -14,6 +14,9 @@ in
  wayland.windowManager.hyprland = {
    enable = true;
    settings = {
+     ecosystem = { 
+       "no_update_news" = "true";
+     };
      monitor = [
        "DP-5, 3440x1440@99.98,3935x2180, 1"
        "HDMI-A-2, 1920x1080@60, 2015x2317, 1"

@@ -36,5 +36,6 @@
    dysk
    unzip
    nh
+   libreoffice-qt6-fresh
  ];
 }
