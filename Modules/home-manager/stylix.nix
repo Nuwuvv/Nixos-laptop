@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/underwater-city-ultrawide.jpg;
+   image = ./Wallpapers/sunset-forest-ultrawide.jpg;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
