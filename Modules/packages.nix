@@ -27,7 +27,7 @@
    vlc
    git
    davinci-resolve
-   #audacity
+   tenacity
    krita
    stremio
    wttrbar
