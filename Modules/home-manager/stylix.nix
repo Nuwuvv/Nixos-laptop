@@ -12,6 +12,7 @@
      waybar.enable = false;
      dunst.enable = false;
      rofi.enable = false;
+     hyprlock.enable = false;
    };
    fonts = {
      monospace = {
