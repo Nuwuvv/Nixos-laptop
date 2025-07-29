@@ -15,6 +15,7 @@
    ./rofi.nix
    ./dunst.nix
    ./fastfetch.nix
+   ./hypridle.nix
  ];
 
  # Don't touch

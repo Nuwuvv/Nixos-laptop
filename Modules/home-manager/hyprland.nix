@@ -7,6 +7,8 @@ let
 
     hyprctl setcursor Duccursor 1 &
     
+    hypridle &
+    
     waybar 
   '';
 in
