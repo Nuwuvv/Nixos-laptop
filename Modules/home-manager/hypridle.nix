@@ -1,6 +1,6 @@
 { inputs, config, pkgs, ... }:
 {
- serives.hypridle = {
+ services.hypridle = {
    enable = true;
    settings = {
      general = {
