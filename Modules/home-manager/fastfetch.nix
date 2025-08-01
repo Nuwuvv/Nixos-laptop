@@ -19,6 +19,7 @@
           "cpu"
           "gpu"
           "memory"
+          "disk"
           "colors"
         ];
       };
