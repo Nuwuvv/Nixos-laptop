@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/fantasy-dragon-art-ultrawide.jpg;
+   image = ./Wallpapers/girl-window-sitting-ultrawide.jpg;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
