@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/sunset-forest-ultrawide.jpg;
+   image = ./Wallpapers/frieren-painting-ultrawide.png;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
