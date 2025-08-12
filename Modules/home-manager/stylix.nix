@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/Vista-sunset-painting.png;
+   image = ./Wallpapers/fantasy-pixelart-4k.png;
    polarity = "dark";
    opacity = {
      terminal = 0.8;

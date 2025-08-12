@@ -62,7 +62,7 @@
        "#img" = {
          padding = mkLiteral "64px 200px";
          border-radius = mkLiteral "24px";
-         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/Vista-sunset-painting.png\", height)";
+         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/fantasy-pixelart-4k.png\", height)";
        };
 
        "#inputbar" = {
