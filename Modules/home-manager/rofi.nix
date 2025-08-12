@@ -62,7 +62,7 @@
        "#img" = {
          padding = mkLiteral "64px 200px";
          border-radius = mkLiteral "24px";
-         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/austronaut-starts-4k.jpg\", height)";
+         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/flower-field-moon-4k.jpg\", height)";
        };
 
        "#inputbar" = {
