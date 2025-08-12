@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/flower-field-moon-4k.jpg;
+   image = ./Wallpapers/Vista-sunset-painting.png;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
