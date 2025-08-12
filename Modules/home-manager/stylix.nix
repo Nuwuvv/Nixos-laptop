@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/girl-window-sitting-ultrawide.jpg;
+   image = ./Wallpapers/night-moon-green-ultrawide.jpg;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
