@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/girl-night-plane-ultrawide.jpg;
+   image = ./Wallpapers/space-pixelart-ultrawide.png;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
