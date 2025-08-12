@@ -127,8 +127,9 @@ in
      };
 
      device = {
-       name = "epic-mouse-v1";
-       sensitivity = "-0.5";
+       name = "huion-huion-tablet_hs610-2";
+       transform = "0";
+       output = "DP-5";
      };
 
      "$mainMod" = "SUPER"; # Sets "Windows" key as main modifier
