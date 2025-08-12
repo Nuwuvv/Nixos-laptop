@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/night-moon-green-ultrawide.jpg;
+   image = ./Wallpapers/austronaut-starts-4k.jpg;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
