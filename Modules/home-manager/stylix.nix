@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/frieren-painting-ultrawide.png;
+   image = ./Wallpapers/girl-night-plane-ultrawide.jpg;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
