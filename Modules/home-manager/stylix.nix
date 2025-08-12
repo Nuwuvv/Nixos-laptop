@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/fantasy-pixelart-4k.png;
+   image = ./Wallpapers/girl-lake-painting-ultrawide.jpg;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
