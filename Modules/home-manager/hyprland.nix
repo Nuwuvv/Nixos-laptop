@@ -8,8 +8,11 @@ let
     hyprctl setcursor Duccursor 1 &
     
     hypridle &
-    
+
+    hyprctl dispatch workspace 1 &
+
     waybar 
+
   '';
 in
 {
@@ -20,10 +23,11 @@ in
        "no_update_news" = "true";
      };
      monitor = [
-       "DP-5, 3440x1440@99.98,3935x2180, 1"
-       "HDMI-A-2, 1920x1080@60, 2015x2317, 1"
-       "DP-6, 2560x1080@59.98, 7375x1298, 1, transform, 3" 
-       "DP-4, 3840x2160@60, 4451x740, 1.5"
+       #"DP-5, 3440x1440@99.98,3935x2180, 1"
+       "DP-5, preferred,0x0, 1"
+       "HDMI-A-2, 1920x1080@60, -1920x0, 1"
+       "DP-6, 2560x1080@59.98, 3440x-1030, 1, transform, 3" 
+       "DP-4, 3840x2160@60, 330x-1440, 1.5"
      ];
      workspace = [
        "1, monitor:DP-5, default:true"
@@ -127,7 +131,7 @@ in
      };
 
      device = {
-       name = "huion-huion-tablet_hs610-2";
+       name = "huion-huion-tablet_hs610";
        transform = "0";
        output = "DP-5";
      };
