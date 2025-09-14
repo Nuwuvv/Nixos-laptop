@@ -4,7 +4,7 @@
    enable = true;
    font = "JetBrains Mono Nerd Font 10";
    modes = [ "drun" "run" ];
-   package = pkgs.rofi-wayland;
+   package = pkgs.rofi;
    theme = 
      let
        inherit (config.lib.formats.rasi) mkLiteral;

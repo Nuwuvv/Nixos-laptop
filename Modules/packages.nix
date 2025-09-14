@@ -38,6 +38,7 @@
    nh
    libreoffice-qt6-fresh
    ffmpeg #dependency for fastfetch
+   heroic
  ];
  #Temp fix until stremio is updated, try to remove this in a week and check if nh os switch builds
  nixpkgs.config.permittedInsecurePackages = [
