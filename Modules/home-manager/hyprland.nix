@@ -126,10 +126,6 @@ in
        };
      };
 
-     gestures = {
-       "workspace_swipe" = "false";
-     };
-
      device = {
        name = "huion-huion-tablet_hs610";
        transform = "0";
