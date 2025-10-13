@@ -62,7 +62,7 @@
        "#img" = {
          padding = mkLiteral "64px 200px";
          border-radius = mkLiteral "24px";
-         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/dunes-sunset-4k.jpg\", height)";
+         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/japan-convini-ultrawide.jpg\", height)";
        };
 
        "#inputbar" = {

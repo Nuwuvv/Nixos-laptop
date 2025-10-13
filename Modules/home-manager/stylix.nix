@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/dunes-sunset-4k.jpg;
+   image = ./Wallpapers/japan-convini-ultrawide.jpg;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
