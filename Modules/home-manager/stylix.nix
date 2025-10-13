@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/girl-lake-painting-ultrawide.jpg;
+   image = ./Wallpapers/dunes-sunset-4k.jpg;
    polarity = "dark";
    opacity = {
      terminal = 0.8;
