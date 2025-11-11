@@ -40,6 +40,7 @@
    ffmpeg #dependency for fastfetch
    heroic
    gcc
+   yt-dlp-light
  ];
 # Temp fix until stremio is updated, try to remove this in a week and check if nh os switch builds
  nixpkgs.config.permittedInsecurePackages = [
