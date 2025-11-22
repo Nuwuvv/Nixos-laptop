@@ -41,6 +41,7 @@
    heroic
    gcc
    yt-dlp-light
+   psmisc #killall
  ];
 # Temp fix until stremio is updated, try to remove this in a week and check if nh os switch builds
  nixpkgs.config.permittedInsecurePackages = [
