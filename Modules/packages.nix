@@ -29,7 +29,7 @@
    davinci-resolve
    tenacity
    krita
-   stremio
+   #stremio
    wttrbar
    nvd #dependency for update waybar module
    spotify-player
@@ -45,7 +45,7 @@
    ocl-icd #opencl for nvidia gpus
  ];
 # Temp fix until stremio is updated, try to remove this in a week and check if nh os switch builds
- nixpkgs.config.permittedInsecurePackages = [
-   "qtwebengine-5.15.19"
- ];
+ #nixpkgs.config.permittedInsecurePackages = [
+ #  "qtwebengine-5.15.19"
+ #];
 }

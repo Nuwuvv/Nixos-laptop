@@ -134,7 +134,7 @@
    };
 
    hardware.steam-hardware.enable = true;
-   #hardware.xone.enable = true;
+   hardware.xone.enable = true;
 
    xdg.portal = {
      enable = true;

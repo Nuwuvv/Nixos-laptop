@@ -3,12 +3,14 @@
  services.hyprpaper = {
    enable = true;
    settings = {
+     slapsh = false;
      preload = [
        "~/.config/Nixos/Modules/home-manager/Wallpapers/night-moon-green-ultrawide.jpg"
        "~/.config/Nixos/Modules/home-manager/Wallpapers/Starry-heaven-painting-1080.png"
        "~/.config/Nixos/Modules/home-manager/Wallpapers/crossing-japan-vertical.jpeg"
        "~/.config/Nixos/Modules/home-manager/Wallpapers/Positive-duck-happy4k.png"
      ];
+
      wallpaper = [
        "DP-5, ~/.config/Nixos/Modules/home-manager/Wallpapers/night-moon-green-ultrawide.jpg" #monitor 1
        "HDMI-A-2, ~/.config/Nixos/Modules/home-manager/Wallpapers/Starry-heaven-painting-1080.png" #monitor 2
