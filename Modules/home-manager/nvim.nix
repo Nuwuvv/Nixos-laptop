@@ -6,7 +6,7 @@
    vimAlias = true;
    viAlias = true;
    vimdiffAlias = true;
-   extraLuaConfig = ''
+   initLua = ''
        --  Enable Relative numbers
        vim.opt.number = true
        vim.opt.relativenumber = true

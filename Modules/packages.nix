@@ -2,7 +2,6 @@
 {
  environment.systemPackages = with pkgs; [
    waybar
-   neofetch
    kitty
    libnotify
    hyprpaper
@@ -29,7 +28,7 @@
    davinci-resolve
    tenacity
    krita
-   #stremio
+   stremio-linux-shell
    wttrbar
    nvd #dependency for update waybar module
    spotify-player
@@ -44,8 +43,4 @@
    psmisc #killall
    ocl-icd #opencl for nvidia gpus
  ];
-# Temp fix until stremio is updated, try to remove this in a week and check if nh os switch builds
- #nixpkgs.config.permittedInsecurePackages = [
- #  "qtwebengine-5.15.19"
- #];
 }

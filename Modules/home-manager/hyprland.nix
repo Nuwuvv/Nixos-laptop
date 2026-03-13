@@ -176,7 +176,7 @@ in
        "$mainMod, mouse_down, workspace, e+1"
        "$mainMod, mouse_up, workspace, e-1"
        "$mainMod, B, togglespecialworkspace, magic"
-       "$mainMod, B, movetoworkspace, +0"
+       "$mainMod, B, movetoworkspace, 1"
        "$mainMod, B, togglespecialworkspace, magic"
        "$mainMod, B, movetoworkspace, special:magic"
        "$mainMod, B, togglespecialworkspace, magic"

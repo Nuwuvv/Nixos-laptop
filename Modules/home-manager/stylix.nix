@@ -3,6 +3,7 @@
  stylix = {
    enable = true;
    image = ./Wallpapers/night-moon-green-ultrawide.jpg;
+   #imageMonitor = "DP-5";
    polarity = "dark";
    opacity = {
      terminal = 0.8;
@@ -16,7 +17,7 @@
    };
    fonts = {
      monospace = {
-       package = pkgs.jetbrains-mono;
+       package = pkgs.nerd-fonts.jetbrains-mono;
        name = "JetBrainsMono Nerd Font Mono";
      };
      sansSerif = {
