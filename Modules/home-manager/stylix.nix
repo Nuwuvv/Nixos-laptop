@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/night-moon-green-ultrawide.jpg;
+   image = ./Wallpapers/Cat-sea-bus-station-4k.png;
    #imageMonitor = "DP-5";
    polarity = "dark";
    opacity = {
