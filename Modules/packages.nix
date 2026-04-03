@@ -28,7 +28,7 @@
    davinci-resolve
    tenacity
    krita
-   stremio-linux-shell
+   #stremio-linux-shell
    wttrbar
    nvd #dependency for update waybar module
    spotify-player
