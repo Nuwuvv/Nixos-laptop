@@ -2,7 +2,7 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/fantasy-pixelart-4k.png;
+   image = ./Wallpapers/girl-window-sitting-ultrawide.jpg;
    #imageMonitor = "DP-5";
    polarity = "dark";
    opacity = {
