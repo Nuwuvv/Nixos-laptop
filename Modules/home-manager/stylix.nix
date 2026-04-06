@@ -2,8 +2,8 @@
 {
  stylix = {
    enable = true;
-   image = ./Wallpapers/girl-window-sitting-ultrawide.jpg;
-   #imageMonitor = "DP-5";
+   image = ./Wallpapers/flute-girl-ducks-ultrawide.png;
+   targets.hyprpaper.monitor = "DP-5";
    polarity = "dark";
    opacity = {
      terminal = 0.8;

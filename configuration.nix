@@ -113,6 +113,7 @@
     services.pipewire = {
       enable = true;
       pulse.enable =true;
+      alsa.enable = true;
     };
 
   # Define a user account
@@ -127,11 +128,18 @@
   nixpkgs.config.allowUnfree = true;
 
   # Steam
-   programs.steam = {
-     enable = true;
-     remotePlay.openFirewall = true; #open ports for remote play
-     dedicatedServer.openFirewall = true; #open ports for source deidacated server
-     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network game transfers
+   programs = {
+     gamescope = {
+       enable = true;
+       capSysNice = true;
+     };
+     steam = {
+       enable = true;
+       gamescopeSession.enable = true;
+       remotePlay.openFirewall = true; #open ports for remote play
+       dedicatedServer.openFirewall = true; #open ports for source deidacated server
+       localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network game transfers
+     };
    };
 
    hardware.steam-hardware.enable = true;

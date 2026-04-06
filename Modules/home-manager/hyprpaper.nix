@@ -5,10 +5,10 @@
    settings = {
      splash = false;
      wallpaper = [
-       {
-         monitor = "DP-5"; #monitor 1
-         path = "~/.config/Nixos/Modules/home-manager/Wallpapers/girl-window-sitting-ultrawide.jpg";
-       }
+       #{
+       #  monitor = "DP-5"; #monitor 1
+       #  path = "~/.config/Nixos/Modules/home-manager/Wallpapers/flute-girl-ducks-ultrawide.png";
+       #} Now stylix lets me target a monitor so this is not needed :)
        { 
         monitor = "HDMI-A-2"; #monitor 2
          path = "~/.config/Nixos/Modules/home-manager/Wallpapers/Starry-heaven-painting-1080.png";
