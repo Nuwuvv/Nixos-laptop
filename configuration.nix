@@ -129,13 +129,8 @@
 
   # Steam
    programs = {
-     gamescope = {
-       enable = true;
-       capSysNice = true;
-     };
      steam = {
        enable = true;
-       gamescopeSession.enable = true;
        remotePlay.openFirewall = true; #open ports for remote play
        dedicatedServer.openFirewall = true; #open ports for source deidacated server
        localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network game transfers

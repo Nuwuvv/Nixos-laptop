@@ -11,11 +11,11 @@
        #} Now stylix lets me target a monitor so this is not needed :)
        { 
         monitor = "HDMI-A-2"; #monitor 2
-         path = "~/.config/Nixos/Modules/home-manager/Wallpapers/Starry-heaven-painting-1080.png";
+         path = "~/.config/Nixos/Modules/home-manager/Wallpapers/japan-train-cartoon-1080p.png";
        }
        {
          monitor = "DP-6"; #monitor 3
-         path = "~/.config/Nixos/Modules/home-manager/Wallpapers/crossing-japan-vertical.jpeg";
+         path = "~/.config/Nixos/Modules/home-manager/Wallpapers/girl-birds-dark-painting-vertical.png";
        }
        {
          monitor = "DP-4"; #monitor 4
