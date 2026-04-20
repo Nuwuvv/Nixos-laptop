@@ -17,6 +17,7 @@
    ./fastfetch.nix
    ./hypridle.nix
    ./hyprlock.nix
+   ./SSH.nix
  ];
 
  # Don't touch

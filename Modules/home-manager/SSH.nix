@@ -2,7 +2,6 @@
 
 {
   programs.ssh = {
-    enable = true;
     matchBlocks = {
       "homelab" = {
         hostname = "10.0.0.50";
