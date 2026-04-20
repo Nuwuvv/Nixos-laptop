@@ -6,6 +6,8 @@
    vimAlias = true;
    viAlias = true;
    vimdiffAlias = true;
+   withRuby = false;
+   withPython3 = false;
    initLua = ''
        --  Enable Relative numbers
        vim.opt.number = true

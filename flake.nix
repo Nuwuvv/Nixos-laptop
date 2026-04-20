@@ -21,27 +21,28 @@
   outputs =
     { self, nixpkgs, home-manager, stylix,  ... }@inputs:
     let
-      system = "x86_64-linux";
       pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
+        system = "x86_64-linux";
+        config.allowUnfree = true;
       };
     in
     {
-      homeConfigurations."Nuuvv" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ 
-          ./Modules/home-manager/home.nix 
-          inputs.stylix.homeModules.stylix
-        ];
-      };
       nixosConfigurations = {
        "Nuuvv-Nix" = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs system; };
+          specialArgs = { inherit inputs; };
           modules = [
-          ./configuration.nix
+            { nixpkgs.hostPlatform = "x86_64-linux"; }
+            ./configuration.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              home-manager.users.Nuuvv = { imports = [
+                ./Modules/home-manager/home.nix
+                stylix.homeModules.stylix
+              ]; };
+            }
           ];
         };
       };

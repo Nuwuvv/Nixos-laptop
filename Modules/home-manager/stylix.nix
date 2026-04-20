@@ -1,5 +1,6 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
+ gtk.gtk4.theme = null;
  stylix = {
    enable = true;
    image = ./Wallpapers/flute-girl-ducks-ultrawide.png;

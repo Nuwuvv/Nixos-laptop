@@ -8,7 +8,6 @@
    ./hyprpaper.nix
    ./kitty.nix
    ./stylix.nix
-   inputs.stylix.homeModules.stylix
    ./waybar.nix
    ./waybar-style.nix
    ./nvim.nix
