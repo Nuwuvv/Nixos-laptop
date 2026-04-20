@@ -9,6 +9,7 @@
       ./Modules/Syncthing.nix
       ./Modules/VM.nix
       ./Modules/Gpu-passthrough.nix
+      ./Modules/SSH.nix
     ];
 
   #Use latest kernel
