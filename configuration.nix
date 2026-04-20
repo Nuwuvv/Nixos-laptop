@@ -5,7 +5,7 @@
     [
       ./Modules/hardware-configuration.nix
       ./Modules/packages.nix
-      inputs.home-manager.nixosModules.home-manager
+     # inputs.home-manager.nixosModules.home-manager
       ./Modules/Syncthing.nix
       ./Modules/VM.nix
       ./Modules/Gpu-passthrough.nix
@@ -38,12 +38,14 @@
   programs.ssh.startAgent = true;
 
   # Home-manager
-  home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      Nuuvv = import ./Modules/home-manager/home.nix;
-    };
-  };
+ # home-manager = {
+ #   useGlobalPkgs = true;
+ #   useUserPackages = true;
+ #   extraSpecialArgs = { inherit inputs; };
+ #   users = {
+ #     Nuuvv = import ./Modules/home-manager/home.nix;
+ #   };
+ # };
 
   # Use the systemd-boot EFI boot loader.
   #boot.loader.systemd-boot.enable = true;
