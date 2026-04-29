@@ -12,6 +12,7 @@
       ./Modules/ssh-host.nix
       ./Modules/VPN.nix
       ./Modules/extra-rules.nix
+      ./Modules/kopia.nix
     ];
 
   #Use latest kernel
@@ -40,6 +41,10 @@
   # Battery
   services.tlp = {
     enable = true;
+    settings = {
+      START_CHARGE_THRESH_BAT0 = 0;
+      STOP_CHARGE_THRESH_BAT0 = 1;
+    };
   };
 
   #start SSH agent

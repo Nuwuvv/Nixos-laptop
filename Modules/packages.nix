@@ -42,5 +42,6 @@
    brightnessctl
    bluetuith
    radeontop
+   kopia
  ];
 }
