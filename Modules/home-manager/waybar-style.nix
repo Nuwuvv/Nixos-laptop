@@ -134,9 +134,7 @@
     }
 
     #tray {
-      background: rgba(46,52,64,0.6);
       padding: 0px 10px 0px 10px;
-      margin: 5px 7px 5px 7px;
     }
 
     #tray menu {

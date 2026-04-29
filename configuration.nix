@@ -11,6 +11,7 @@
       #./Modules/Gpu-passthrough.nix
       ./Modules/ssh-host.nix
       ./Modules/VPN.nix
+      ./Modules/Sudo-rules.nix
     ];
 
   #Use latest kernel
@@ -135,7 +136,7 @@
   # Define a user account
    users.users.Nuuvv = {
      isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
      packages = with pkgs; [
        tree
      ];
