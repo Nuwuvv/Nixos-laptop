@@ -84,6 +84,20 @@
       transition: all 0.3s ease-in-out;
     }
 
+    #custom-vpn {
+      padding-left: 10px;
+      padding-right: 10px;
+      font-size: 16px;
+    }
+
+    #custom-vpn.connected {
+      color: #6ff28b;
+    }
+
+    #custom-vpn.disconnected {
+      color: #4e4e4e;
+    }
+
     #G2 {
       background-color: rgba(14,22,26,0.6);
       margin: 5px 4px 5px 4px;

@@ -1,9 +1,10 @@
 { config, lib, pkgs, ... }:
 {
   networking.wg-quick.interfaces.wg0 = {
+    autostart = false;
     address = [ "10.10.0.5/24" ];
     privateKeyFile = "/etc/wireguard/private.key";
-    dns = [ "10.0.0.1" ];
+    dns = [ "10.10.0.1" ];
     peers = [
       {
         publicKey = "faXOJ2U5Un1t/Qpx2E7NDeIQWMTKNZyYXn1g1q0kfXI=";

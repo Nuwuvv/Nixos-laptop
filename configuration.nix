@@ -11,7 +11,7 @@
       #./Modules/Gpu-passthrough.nix
       ./Modules/ssh-host.nix
       ./Modules/VPN.nix
-      ./Modules/Sudo-rules.nix
+      ./Modules/extra-rules.nix
     ];
 
   #Use latest kernel

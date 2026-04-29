@@ -66,7 +66,7 @@ in
 
        "group/G1" = {
          orientation = "horizontal";
-         modules = [ "custom/Nix" "hyprland/workspaces" ];
+         modules = [ "custom/Nix" "hyprland/workspaces" "custom/vpn" ];
        };
 
        "custom/Nix" = {
@@ -90,6 +90,14 @@ in
            default = "󰊠";
          };
          sort-by-number = true;
+       };
+
+       "custom/vpn" = {
+         exec = ''bash -c 'if systemctl is-active --quiet wg-quick-wg0; then echo "{\"text\": \"󰇧\", \"class\": \"connected\"}"; else echo "{\"text\": \"󰇧\", \"class\": \"disconnected\"}"; fi' '';
+         return-type = "json";
+         interval = 5;
+         on-click = "bash -c 'systemctl is-active --quiet wg-quick-wg0 && sudo systemctl stop wg-quick-wg0 || sudo systemctl start wg-quick-wg0'";
+         tooltip = false;
        };
 
        "group/G2" = {
@@ -252,6 +260,7 @@ in
          format-full = "<span color='#85fe92' size='15000'></span><span rise='2500'>    {capacity}%</span>";
          format-icons = [ "" "" "" "" "" ];
          tooltip-format = "{timeTo} - {capacity}%\nPower: {power}W";
+         on-click = "sudo tlp fullcharge";
        };
 
        "clock" = {
