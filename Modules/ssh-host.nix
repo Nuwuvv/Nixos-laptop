@@ -2,10 +2,10 @@
 {
   services.openssh = {
     enable = true;
-    listenAddresses = [
-      { addr = "10.0.0.102"; port = 22; }
-      { addr = "10.10.0.0"; port = 22; }
-    ];
+#    listenAddresses = [
+#      { addr = "10.0.0.102"; port = 22; }
+#      { addr = "10.10.0.0"; port = 22; }
+#    ];
     settings = {
       PasswordAuthentication = false;
       PermitRootLogin = "no";

@@ -18,7 +18,7 @@
 
       label = [
         {
-          monitor = "DP-5";
+          monitor = "eDP-2";
           text = "$TIME";
           color = "rgba(242, 243, 244, 0.75)";
           font_size = 95;
@@ -28,7 +28,7 @@
           valign = "center";
         }
         {
-          monitor = "DP-5";
+          monitor = "eDP-2";
           text = ''cmd[update:1000] echo $(date +"%A, %B %d")'';
           color = "rgba(242, 243, 244, 0.75)";
           font_size = 22;
@@ -40,7 +40,7 @@
       ];
 
       image = {
-        monitor = "DP-5";
+        monitor = "eDP-2";
         path = "$HOME/.config/Nixos/Modules/home-manager/profile.png";
         position = "0, 50";
         halign = "center";
@@ -51,7 +51,7 @@
         {
           size = "200, 50";
           position = "0, -100";
-          monitor = "DP-5";
+          monitor = "eDP-2";
           dots_size = 0.2;
           dots_spacing = 0.35;
           dots_center = true;

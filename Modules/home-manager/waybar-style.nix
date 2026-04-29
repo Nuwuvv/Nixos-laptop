@@ -5,7 +5,6 @@
       border: none;
       border-radius: 0px;
       font-family: JetBrainsMono Nerd Fonts;
-      font-size: 14px;
       font-style: normal;
       font-weight: normal;
       min-height: 0px;
@@ -27,50 +26,79 @@
     }
  
     #custom-launcher {
-      color: #cdd6f4;
-      background-color: rgba(46,52,64,0.6);
-      border: solid 2px rgba(205,214,244,0.7);
+      color: #92b8cd;
+      background-color: rgba(14,22,26,0.6);
+      border: solid 2px rgba(31,29,41,0.2);
       border-radius: 8px;
-      margin: 5px 5px 5px 5px;
+      margin: 5px 2px 5px 5px;
       padding: 0px 15px 1px 9px;
       font-size: 25;
     }
 
-    #workspaces {
-      background: rgba(46,52,64,0.6);
-      margin: 5px 7px 5px 7px;
-      padding: 8px 5px;
+    #G1 {
+      background-color: rgba(14,22,26,0.6);
+      margin: 5px 4px 5px 4px;
+      padding: 4px 5px;
       border-radius: 8px;
-      border: solid 2px rgba(205,214,244,0.7);
+      border: solid 2px rgba(31,29,41,0.2);
       font-weight: normal;
       font-style: normal;
+    }
+    
+    #custom-Nix {
+      color: rgba(253,253,253,1);
+      font-size: 14px;
+      padding-right: 40px;
+      padding-left: 5px;
+    }
+
+    #workspaces {
+      padding-left: 10px;
+      padding-right: 25px;
+      min-width: 180px;
     }
 
     #workspaces button {
       padding: 0px 5px;
+      font-size: 17px;
       margin: 0px 3px;
-      border-radius: 16px;
-      color: #d8dee9;
-      background-color: #6f7787;
+      color: #6990c6;
       transition: all 0.3s ease-in-out;
     }
 
     #workspaces button:hover {
-      background-color: #cdd6f4;
-      color: #cdd6f4;
-      border-radius: 14px;
-      min-width: 40px;
-      background-size: 400% 400%;
+      font-size: 20px;
+      padding: 0px 10px;
+      background: transparent;
     }
+    #workspaces button:not(.active):nth-child(1):hover { color: #FF2D55; }
+    #workspaces button:not(.active):nth-child(2):hover { color: #9B30FF; }
+    #workspaces button:not(.active):nth-child(3):hover { color: #FF2D9B; }
+    #workspaces button:not(.active):nth-child(4):hover { color: #00FF6A; }
+    #workspaces button:not(.active):nth-child(5):hover { color: #00F5FF; }
+    #workspaces button:not(.active):nth-child(6):hover { color: #FF6B00; }
+    #workspaces button:not(.active):nth-child(7):hover { color: #FFE600; }
 
     #workspaces button.active {
-      background-color: #cdd6f4;
-      color: #cdd6f4;
-      border-radius: 14px;
-      min-width: 40px;
-      background-size: 400% 400%;
+      color: #f2a272;
       transition: all 0.3s ease-in-out;
-      border: 0px solid rgba(0, 0, 0, 0);
+    }
+
+    #G2 {
+      background-color: rgba(14,22,26,0.6);
+      margin: 5px 4px 5px 4px;
+      padding: 4px 5px;
+      border-radius: 8px;
+      border: solid 2px rgba(31,29,41,0.2);
+      font-weight: normal;
+      font-style: normal;
+      min-width: 350px;
+    }
+
+    #backlight {
+      margin: 0px 5px 0px 5px;
+      padding: 0px 5px 0px 9px;
+      font-size: 14px;
     }
 
     #cava {
@@ -85,28 +113,28 @@
     } 
 
     #mpris {
-      /*color: #f3eedd;*/
-      background-color: rgba(46,52,64,0.6);
+      color: #FDFDFD;
+      background-color: rgba(14,22,26,0.6);
+      font-weight: normal;
+      font-style: normal;
       border-radius: 8px;
-      border: solid 2px rgba(205,214,244,0.7);
-      margin: 5px 7px 5px 7px;
+      border: solid 2px rgba(31,29,41,0.2);
+      margin: 5px 4px 5px 4px;
       padding: 0px 15px 0px 15px;
-      font-size: 16;
+      font-size: 16px;
+      min-width: 360px;
     }
 
+
     #bluetooth {
-      background-color: rgba(46,52,64,0.6);
       color: #3924f3;
-      border-radius: 8px;
-      border: solid 2px rgba(205,214,244,0.7);
-      margin: 6px 7px 6px 7px;
-      padding: 0px 10px 0px 10px;
+      margin: 0px 7px 0px 7px;
+      font-size: 14px;
+      padding: 0px 7px 0px 7px;
     }
 
     #tray {
       background: rgba(46,52,64,0.6);
-      border-radius: 8px;
-      border: solid 2px rgba(205,214,244,0.7);
       padding: 0px 10px 0px 10px;
       margin: 5px 7px 5px 7px;
     }
@@ -130,83 +158,80 @@
       font-size: 16;
     }
 
-    #network {
-      background-color: rgba(46,52,64,0.6);
-      border: solid 2px rgba(205,214,244,0.7);
-      border-radius: 8px;
+    #G3 {
+      background-color: rgba(14,22,26,0.6);
       margin: 6px 5px 6px 5px;
-      padding: 0px 15px 0px 15px;
+      padding: 4px 5px;
+      border-radius: 8px;
+      border: solid 2px rgba(31,29,41,0.2);
+      font-weight: normal;
+      font-style: normal;
+      min-width: 450px;
+    }
+
+    #network {
+      color: #FDFDFD;
+      padding: 0px 7px 0px 7px;
+      font-size: 14px;
     }
 
     #custom-updates {
-      background-color: rgba(46,52,64,0.6);
-      border: solid 2px rgba(205,214,244,0.7);
-      border-radius: 8px;
-      margin: 6px 5px 6px 5px;
-      padding: 0px 15px 0px 15px;
+      color: #FDFDFD;
+      margin: 0px 5px 0px 5px;
+      padding: 0px 5px 0px 5px;
+      font-size: 14px;
     }
       
     #disk {
-      background-color: rgba(46,52,64,0.6);
-      color: #c68cff;
-      border-radius: 8px;
-      border: solid 2px rgba(205,214,244,0.7);
-      margin: 6px 5px 6px 5px;
-      padding: 0px 10px 0px 10px;
-      font-size: 14;
+      color: #DFDFDF;
+      padding: 0px 9px 0px 7px;
+      font-size: 14px;
     }
 
     #memory {
-      background-color: rgba(46,52,64,0.6);
-      color: #fff785;
-      border-radius: 8px;
-      border: solid 2px rgba(205,214,244,0.7);
-      margin: 6px 5px 6px 5px;
-      padding: 0px 10px 0px 10px;
-      font-size: 14;
+      color: #DFDFDF;
+      padding: 0px 7px 0px 7px;
+      font-size: 14px;
     }
 
     #cpu {   
-      background-color: rgba(46,52,64,0.6);
-      color: #f38986;
-      border-radius: 8px;
-      border: solid 2px rgba(205,214,244,0.7);
-      margin: 6px 5px 6px 5px;
-      padding: 0px 10px 0px 10px;
-      font-size: 14;
+      color: #DFDFDF;
+      padding: 0px 7px 0px 7px;
+      font-size: 14px;
     }
 
     #pulseaudio {
-      color: #5c64f3;
-      background: rgba(46,52,64,0.6);
-      border-radius: 8px;
-      border: solid 2px rgba(205,214,244,0.7);
-      margin: 6px 5px 6px 5px;
-      padding: 0px 15px 0px 15px;
-      font-size: 14;
+      color: #DFDFDF;
+      padding: 0px 7px 0px 7px;
+      font-size: 14px;
+    }
+    
+    #battery {
+      color: #DFDFDF;
+      padding: 0px 7px 0px 9px;
+      font-size: 14px;
     }
 
     #custom-weather {
-      background-color: rgba(46,52,64,0.6);
-      border-radius: 8px;
-      border: solid 2px rgba(205,214,244,0.7);
-      padding-left: 17px;
-      padding-right: 15px;
-      margin: 6px 5px 6px 5px;
-      font-size: 16;
+      color: #FDFDFD;
+      padding-left: 10px;
+      padding-right: 10px;
+      margin: 0px 5px 0px 5px;
+      font-size: 15px;
     }
 
     #clock {
-      background-color: rgba(46,52,64,0.6);
+      color: #DFDFDF;
       border-radius: 8px;
       padding-left: 13px;
       padding-right: 15px;
       margin: 6px 5px 6px 5px;
-      border: solid 2px rgba(205,214,244,0.7);
+      border: solid 2px rgba(31,29,41,0.2);
+      font-weight: normal;
+      font-style: normal;
       font-size: 14;
+      background-color: rgba(14,22,26,0.6);
     }
-
 
   '';
 }
-

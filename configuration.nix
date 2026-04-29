@@ -7,9 +7,10 @@
       ./Modules/packages.nix
      # inputs.home-manager.nixosModules.home-manager
       ./Modules/Syncthing.nix
-      ./Modules/VM.nix
-      ./Modules/Gpu-passthrough.nix
+      #./Modules/VM.nix
+      #./Modules/Gpu-passthrough.nix
       ./Modules/ssh-host.nix
+      ./Modules/VPN.nix
     ];
 
   #Use latest kernel
@@ -35,6 +36,11 @@
     NH_FLAKE = "/home/Nuuvv/.config/Nixos";
   };
 
+  # Battery
+  services.tlp = {
+    enable = true;
+  };
+
   #start SSH agent
   programs.ssh.startAgent = true;
 
@@ -53,20 +59,17 @@
   #boot.loader.efi.canTouchEfiVariables = true;
   # Use GRUB to boot like a real MAN
   boot.loader = {
-    systemd-boot.enable = false;
     grub = {
       enable = true;
-      useOSProber = true;
       device = "nodev";
       efiSupport = true;
     };
     efi = {
       canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
     };
   };
 
-  networking.hostName = "Nuuvv-Nix"; # Define your hostname.
+  networking.hostName = "LL-Nix"; # Define your hostname.
 
   #Network Manager
   networking.networkmanager.enable = true;
@@ -106,11 +109,21 @@
   hardware.nvidia = {
       # Modesetting is reqquired.
       modesetting.enable = true;
+      powerManagement.enable = true;
+      powerManagement.finegrained = true;
       open = true;
       nvidiaSettings = true;
       #package = config.boot.kernelPackages.nvidiaPackages.beta;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
+      prime = {
+        offload = {
+          enable = true;
+      #    enableOffloadCmd = true;
+        };
+        amdgpuBusId = "PCI:5:0:0";
+        nvidiaBusId = "PCI:1:0:0";
+      };
+    };
 
   # Enable sound.
     services.pipewire = {
@@ -141,7 +154,6 @@
    };
 
    hardware.steam-hardware.enable = true;
-   hardware.xone.enable = true;
 
    xdg.portal = {
      enable = true;

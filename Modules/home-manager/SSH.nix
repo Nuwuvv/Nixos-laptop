@@ -14,6 +14,10 @@
   Host router
     HostName 10.0.0.1
     User nuwuvv
+
+  Host nix
+    HostName 10.0.0.102
+    User Nuuvv
 '';
  # programs.ssh = {
  #   matchBlocks = {

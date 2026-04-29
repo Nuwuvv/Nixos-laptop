@@ -4,7 +4,7 @@
    enable = true;
    settings = {
      global = {
-       monitor = "DP-5";
+       monitor = "eDP-2";
        offset = "20x10";
        progress_bar = true;
        progress_bar_height = 10;

@@ -28,7 +28,7 @@
     in
     {
       nixosConfigurations = {
-       "Nuuvv-Nix" = nixpkgs.lib.nixosSystem {
+       "LL-Nix" = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
           modules = [
             { nixpkgs.hostPlatform = "x86_64-linux"; }

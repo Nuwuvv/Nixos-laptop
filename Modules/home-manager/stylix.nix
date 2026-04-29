@@ -3,8 +3,7 @@
  gtk.gtk4.theme = null;
  stylix = {
    enable = true;
-   image = ./Wallpapers/flute-girl-ducks-ultrawide.png;
-   targets.hyprpaper.monitor = "DP-5";
+   image = ./Wallpapers/girl-sky-bird-laptop.png;
    polarity = "dark";
    opacity = {
      terminal = 0.8;

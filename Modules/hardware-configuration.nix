@@ -14,54 +14,27 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/a432d825-4da1-4c32-bf63-3be688e6d57d";
+    { device = "/dev/disk/by-uuid/3529613e-e5c6-405c-862c-87389c399654";
       fsType = "ext4";
-      options = [ "noatime" "nodiratime" "discard" ];
     };
 
-  fileSystems."/boot/efi" =
-    { device = "/dev/disk/by-uuid/C158-0F59";
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/D48E-0E2B";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/a6cbd95b-e824-4a02-a5f5-f6786ec0b6f2"; }
+    [ { device = "/dev/disk/by-uuid/59d474e2-5817-48f7-87d5-ad4c7f3aaa83"; }
     ];
 
-  fileSystems."home/Nuuvv/Drives/4tb-wd-m.2" =
-    { device = "/dev/disk/by-uuid/19b674f0-e465-4273-84fe-ab3226772e74";
-      fsType = "ext4";
-      options = [ "noatime" "nodiratime" "discard" ];
-    };
-
-    fileSystems."home/Nuuvv/Drives/2tb-sam-ssd" =
-    { device = "/dev/disk/by-uuid/b4a57b67-083d-4c36-b562-5876756a2723";
-      fsType = "ext4";
-      options = [ "noatime" "nodiratime" "discard" ];
-    };
-
-  fileSystems."home/Nuuvv/Drives/2tb-sam-m.2" =
-    { device = "/dev/disk/by-uuid/3e5eaeeb-5083-4252-bffc-66682995ced8";
-      fsType = "ext4";
-      options = [ "noatime" "nodiratime" "discard" ];
-    };
-
-  fileSystems."home/Nuuvv/Drives/500Gb-Gig-ssd" =
-    { device = "/dev/disk/by-uuid/ef014d1e-5c46-4c61-be60-808cd1a812ee";
-      fsType = "ext4";
-      options = [ "noatime" "nodiratime" "discard" ];
-    };
-
-  #try to fix monitor resolution
-  boot.kernelParams = ["nvidia_drm.fbdev=1"];
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp8s0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp7s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp4s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

@@ -49,20 +49,29 @@ in
    settings = {
      mainBar = {
        output = [
-         "DP-5"
-         "DP-4"
+         "eDP-2"
        ];
        position = "top";
        layer = "top";
        height = 25;
-       modules-left = [ "custom/launcher" "hyprland/workspaces" "cava" "mpris" "bluetooth" "tray" ];
-       modules-center = [ "hyprland/window" ];
-       modules-right = [ "network" "custom/updates" "disk" "memory" "cpu" "pulseaudio" "custom/weather" "clock" ];
+       modules-left = [ "custom/launcher" "group/G1" "group/G2" ];
+       modules-center = [ "mpris" ];
+       modules-right = [ "group/G3" "clock" ];
  
        "custom/launcher" = {
          format = "󱄅";
          on-click = "grim -o DP-5";
          on-click-right = "grim -g \"$(slurp)\"";
+       };
+
+       "group/G1" = {
+         orientation = "horizontal";
+         modules = [ "custom/Nix" "hyprland/workspaces" ];
+       };
+
+       "custom/Nix" = {
+         format = "Nix OS";
+         on-click = "rofi -show drun -show-icons";
        };
  
        "hyprland/workspaces" = {
@@ -73,12 +82,19 @@ in
          on-scroll-down = "hyprctl dispatch workspace e+1";
          format = "{icon}";
          on-click = "activate";
+         min-length = 10;
+         max-length = 10;
          format-icons = {
            urgent = "";
-           active = "";
-           default = "";
+           active = "󰮯";
+           default = "󰊠";
          };
          sort-by-number = true;
+       };
+
+       "group/G2" = {
+         orientation = "horizontal";
+         modules = [ "backlight" "bluetooth" "custom/updates" "custom/weather" "tray" ];
        };
 
        "cava" = {
@@ -101,6 +117,15 @@ in
          actions = {
            on-click-right = "mode";
          };
+       };
+
+       "backlight" = {
+         device = "amdgpu_bl2";
+         format = "<span color='#e1ad30' size='14000' >{icon}</span>   <span color='#FDFDFD'>{percent}%</span>";
+         format-icons = [ "󱩎" "󱩏" "󱩐" "󱩑" "󱩒" "󱩓" "󱩔" "󱩕" "󱩖" "󰛨" ];
+         on-scroll-up = "brightnessctl -e4 -n2 set 2%+";
+         on-scroll-down = "brightnessctl -e4 -n2 set 2%-";
+         tooltip = false;
        };
 
        "mpris" = {
@@ -127,7 +152,7 @@ in
        "bluetooth" = {
          format-on = "<span size='14000'>󰂯</span>";
          format-off = "<span size='14000' foreground='#f37061'>󰂲</span>";
-         on-click = "bluetoothctl power on";
+         on-click = "kitty --class floating -e bluetuith";
          on-click-right = "bluetoothctl power off";
        };
 
@@ -146,32 +171,46 @@ in
          separate-outputs = true;
        };
 
+  "group/G3" = {
+         orientation = "horizontal";
+         modules = [ "disk" "cpu" "memory" "network" "pulseaudio" "battery" ];
+       };
+
        "network" =  {
-         format = "{bandwidthDownBits}  <span size='13000' foreground='#61f38d'>󰁈</span>  | {bandwidthUpBits}  <span size='13000' foreground='#f37e8a'>󰁠</span>";
+         interface = "wlp4s0";
+         format-wifi = "<span color='#4caca9' size='16000'>{icon}</span><span rise='2500'>  {bandwidthDownBits}</span>"; 
+         format-disconnected = "<span color='#5f0000' size='16000'>󰤮</span>  Offline";
+         format-disabled = "<span color='#0c0d0d size='16000''>󰤬</span>  Disabled";
+         format-linked = "<span color='#4caca9' size='16000'></span>  {bandwithDownBits}";
+         format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
+         tooltip-format-wifi = "{essid} {signalStrength}%\n{ipaddr}";
+         tooltip-format-disconnected = "Disconnected";
+         on-click-right = "nmcli radio wifi off";
+         on-click = "kitty --class floating -e nmtui";
          interval = 1;
        };
 
        "disk" = {
-         format = "   {}%";
+         format = "<span color='#c574dd' size='15000'></span><span rise='2500'>   {}%</span>";
          format-alt = "   {used}/{total} GiB";
          interval = 20;
          path = "/";
        };
 
        "memory" = {
-         format = "  {}%";
-         format-alt = "  {used}/{total} GiB";
+         format = "<span color='#f0b92f' size='15000'></span><span rise='2500'>  {}%</span>";
+         format-alt = "<span color='#f0b92f' size='15000'></span>  {used}/{total} GiB";
          interval = 5;
        };
 
        "cpu" = {
-         format = "󰍛   {usage}%";
+         format = "<span color='#ec407a' size='15000'>󰍛</span><span rise='2500'>   {usage}%</span>";
          format-alt = "󰍛   {avg_frequency} GHz";
-         interval = 5;
+         interval = 55;
        };
 
        "pulseaudio" = {
-         format = "<span size='15000'>{icon}</span>  {volume}%";
+         format = "<span color='#5c64f3' size='16000'>{icon}</span><span rise='2500'>  {volume}%</span>";
          format-muted = "<span size='15000' foreground='#f37061'>󰝟</span>  {volume}%";
          format-icons = {
            headphone = " ";
@@ -192,13 +231,32 @@ in
          format = "{}°";
          tooltip = true;
          interval = 600;
-         exec = ''wttrbar --nerd --custom-indicator "{ICON}   {temp_C}"'';
+         exec = ''wttrbar --nerd --custom-indicator "<span size='15000'>{ICON}</span>  {weatherDesc} |  {temp_C}"'';
          return-type = "json";
        }; 
+       
+       "battery" = {
+         battery = "BAT0";
+         adapter = "ADP0";
+         full-at = 99;
+         states = {
+           plugged = 100;
+           full = 99;
+           good = 60;
+           warning = 30;
+           critical = 15;
+         };
+         format = "<span color='#f2a272' size='16000'>{icon}</span><span rise='2500'>    {capacity}%</span>";
+         format-charging = "<span color='#a7aa1a' size='15000'></span><span rise='2500'>   {capacity}%</span>";
+         format-plugged = "<span color='#85fe92' size='15000'>󰚥</span><span rise='2500'>  {capacity}%</span>";
+         format-full = "<span color='#85fe92' size='15000'></span><span rise='2500'>    {capacity}%</span>";
+         format-icons = [ "" "" "" "" "" ];
+         tooltip-format = "{timeTo} - {capacity}%\nPower: {power}W";
+       };
 
        "clock" = {
          interval = 1;
-         format = " {:%a  %B %d    %H:%M}";
+         format = " {:%a  %B %d  <span color='#8897f4' size='13000'>󰥔</span>  %H:%M}";
          format-alt = "  {:%H:%M}";
          tooltip-format = "<tt>{calendar}</tt>";
          calendar = {
@@ -367,8 +425,8 @@ in
        };
 
        "pulseaudio" = {
-         format = "<span size='15000'>{icon}</span>  {volume}%";
-         format-muted = "<span size='15000' foreground='#f37061'>󰝟</span>  {volume}%";
+         format = "<span size='16000'>{icon}</span>  {volume}%";
+         format-muted = "<span size='16000' foreground='#f37061'>󰝟</span>  {volume}%";
          format-icons = {
            headphone = " ";
            hands-free = "";
