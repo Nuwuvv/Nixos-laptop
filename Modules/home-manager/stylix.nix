@@ -3,7 +3,7 @@
  gtk.gtk4.theme = null;
  stylix = {
    enable = true;
-   image = ./Wallpapers/girl-sky-bird-laptop.png;
+   image = ./Wallpapers/girl-tvs-laptop.png;
    polarity = "dark";
    opacity = {
      terminal = 0.8;

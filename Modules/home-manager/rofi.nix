@@ -27,7 +27,7 @@
          border = mkLiteral "1px";
          border-radius = mkLiteral "30px";
          background-color = mkLiteral "transparent";
-         width = mkLiteral "60%";
+         width = mkLiteral "50%";
        };
 
        "#mainbox" = {
@@ -62,7 +62,7 @@
        "#img" = {
          padding = mkLiteral "64px 200px";
          border-radius = mkLiteral "24px";
-         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/girl-sky-bird-laptop.png\", height)";
+         background-image = mkLiteral "url(\"~/.config/Nixos/Modules/home-manager/Wallpapers/girl-tvs-laptop.png\", height)";
        };
 
        "#inputbar" = {
