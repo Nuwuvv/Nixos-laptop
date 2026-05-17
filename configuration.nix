@@ -13,6 +13,7 @@
       ./Modules/VPN.nix
       ./Modules/extra-rules.nix
       ./Modules/kopia.nix
+      ./Modules/cursor.nix
     ];
 
   #Use latest kernel
