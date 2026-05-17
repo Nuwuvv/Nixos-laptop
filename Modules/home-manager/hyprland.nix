@@ -34,7 +34,7 @@ in
      env = [
        #"HYPRCURSOR_SIZE,24"
        "HYPRCURSOR_THEME,Mini-Sleek"
-       #"WLR_NO_HARDWARE_CURSORS,1"
+       "WLR_NO_HARDWARE_CURSORS,1"
        "XCURSOR_THEME,Mini-Sleek"
        "XCURSOR_SIZE,24"
      ];

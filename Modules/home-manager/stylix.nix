@@ -1,5 +1,16 @@
 { config, pkgs, lib, ... }:
+let
+  myCursor = pkgs.runCommand "my-cursor" {} ''
+    mkdir -p $out/share/icons/Mini-Sleek
+    cp -r ${./Mini-Sleek}/* $out/share/icons/Mini-Sleek/
+  '';
+in
 {
+  stylix.cursor = {
+    package = myCursor;
+    name = "Mini-Sleek";
+    size = 24;
+  };
  gtk.gtk4.theme = null;
  stylix = {
    enable = true;
