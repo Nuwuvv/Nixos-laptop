@@ -23,7 +23,7 @@ in
        "no_update_news" = "true";
      };
      monitor = [
-       ", preferred, auto, 1"
+      ", preferred, auto, 1"
      ];
      "$terminal" = "kitty -1";
      "$fileManager" = "dolphin";
@@ -33,9 +33,9 @@ in
 
      env = [
        #"HYPRCURSOR_SIZE,24"
-       #"HYPRCURSOR_THEME,Duccursor"
+       "HYPRCURSOR_THEME,Mini-Sleek"
        #"WLR_NO_HARDWARE_CURSORS,1"
-       #"XCURSOR_THEME,Duccursor"
+       "XCURSOR_THEME,Mini-Sleek"
        "XCURSOR_SIZE,24"
      ];
 
@@ -96,7 +96,6 @@ in
      };
 
      dwindle = {
-       pseudotile = "true"; # Master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
        "preserve_split" = "true"; # You probably want this
      };
      master = {
@@ -126,7 +125,6 @@ in
        "$mainMod, V, togglefloating,"
        "$mainMod, D, exec, $menu"
        "$mainMod, P, pseudo," # dwindle
-       "$mainMod, R, togglesplit," # dwindle
        "$mainMod, F, fullscreen"
        "$mainMod, G, fullscreen, 1"
        "$mainMod, T, fullscreenstate, 0 2"

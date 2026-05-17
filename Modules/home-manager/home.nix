@@ -17,6 +17,7 @@
    ./hypridle.nix
    ./hyprlock.nix
    ./SSH.nix
+   ./cursor.nix
  ];
 
  # Don't touch

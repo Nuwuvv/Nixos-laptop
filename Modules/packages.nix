@@ -43,5 +43,6 @@
    bluetuith
    radeontop
    kopia
+   feishin
  ];
 }

@@ -136,7 +136,7 @@
       margin: 5px 4px 5px 4px;
       padding: 0px 15px 0px 15px;
       font-size: 16px;
-      min-width: 410px;
+      min-width: 310px;
     }
 
 

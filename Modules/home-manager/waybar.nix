@@ -139,7 +139,7 @@ in
        "mpris" = {
          format = "{player_icon}  {status_icon}  {title} - {artist}";
          format-paused = "{player_icon}  {status_icon}  {title} - {artist}";
-         max-length = 35;
+         max-length = 40;
          on-scroll-up = "playerctld shift";
          on-scroll-down = "playerctld shift";
          player-icons = {
