@@ -33,7 +33,7 @@
    dysk
    unzip
    nh
-   libreoffice-qt6-fresh
+   libreoffice-qt
    ffmpeg #dependency for fastfetch
    gcc
    yt-dlp-light

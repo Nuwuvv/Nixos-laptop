@@ -2,8 +2,8 @@
 {
  programs.rofi = {
    enable = true;
-   font = "JetBrains Mono Nerd Font 10";
-   modes = [ "drun" "run" ];
+   settings.font = "JetBrains Mono Nerd Font 10";
+   settings.modes = "drun,run";
    package = pkgs.rofi;
    theme = 
      let
