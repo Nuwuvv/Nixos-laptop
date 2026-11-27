@@ -9,12 +9,12 @@ in
   stylix.cursor = {
     package = myCursor;
     name = "Mini-Sleek";
-    size = 24;
+    size = 128;
   };
- gtk.gtk4.theme = null;
  stylix = {
    enable = true;
-   image = ./Wallpapers/girl-tvs-laptop.png;
+   overlays.enable = false;
+   image = ./Wallpapers/rocky-sea-laptop.png;
    polarity = "dark";
    opacity = {
      terminal = 0.8;

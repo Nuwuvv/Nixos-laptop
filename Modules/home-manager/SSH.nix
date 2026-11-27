@@ -18,6 +18,19 @@
   Host nix
     HostName 10.0.0.102
     User Nuuvv
+
+  Host sigilos
+    HostName 10.0.0.119
+    User Nuuvv
+
+  Host White
+    HostName 10.0.0.120
+    User Nuuvv
+
+  Host aws
+    HostName 52.15.238.228
+    User Nuuvv
+
 '';
  # programs.ssh = {
  #   matchBlocks = {

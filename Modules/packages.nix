@@ -6,7 +6,7 @@
    libnotify
    hyprpaper
    brave
-   librewolf
+   #librewolf
    wget
    btop
    nnn
@@ -44,5 +44,7 @@
    radeontop
    kopia
    feishin
+   pkgs.xivlauncher
+   pkgs.piper
  ];
 }

@@ -51,6 +51,9 @@
   #start SSH agent
   programs.ssh.startAgent = true;
 
+  #G502 mapping
+  services.ratbagd.enable = true;
+
   # Home-manager
  # home-manager = {
  #   useGlobalPkgs = true;
