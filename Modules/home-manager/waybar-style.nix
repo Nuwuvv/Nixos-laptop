@@ -183,6 +183,7 @@
       color: #FDFDFD;
       padding: 0px 7px 0px 7px;
       font-size: 14px;
+      min-width: 100px;
     }
 
     #custom-updates {

@@ -209,6 +209,7 @@ in
 
        "network" =  {
          interface = "wlp4s0";
+         align = 0;   # left-align so the icon stays put inside the fixed width
          format-wifi = "<span color='#4caca9' size='18400'>{icon}</span><span rise='2500'>  {bandwidthDownBits}</span>"; 
          format-disconnected = "<span color='#5f0000' size='18400'>󰤮</span>  Offline";
          format-disabled = "<span color='#0c0d0d size='18400''>󰤬</span>  Disabled";
