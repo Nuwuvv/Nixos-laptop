@@ -30,9 +30,9 @@
       background-color: rgba(14,22,26,0.6);
       border: solid 2px rgba(31,29,41,0.2);
       border-radius: 8px;
-      margin: 5px 2px 5px 5px;
-      padding: 0px 15px 1px 9px;
-      font-size: 25;
+      margin: 5px 4px 5px 5px;
+      padding: 0px 12px 1px 12px;
+      font-size: 29;
     }
 
     #G1 {
@@ -48,26 +48,25 @@
     #custom-Nix {
       color: rgba(253,253,253,1);
       font-size: 14px;
-      padding-right: 40px;
+      padding-right: 15px;
       padding-left: 5px;
     }
 
     #workspaces {
-      padding-left: 10px;
-      padding-right: 25px;
-      min-width: 180px;
+      padding-left: 4px;
+      padding-right: 10px;
     }
 
     #workspaces button {
       padding: 0px 5px;
-      font-size: 17px;
+      font-size: 19.5px;
       margin: 0px 3px;
       color: #6990c6;
       transition: all 0.3s ease-in-out;
     }
 
     #workspaces button:hover {
-      font-size: 20px;
+      font-size: 23px;
       padding: 0px 10px;
       background: transparent;
     }
@@ -85,9 +84,9 @@
     }
 
     #custom-vpn {
-      padding-left: 10px;
+      padding-left: 9px;
       padding-right: 10px;
-      font-size: 16px;
+      font-size: 18.4px;
     }
 
     #custom-vpn.connected {
@@ -136,7 +135,6 @@
       margin: 5px 4px 5px 4px;
       padding: 0px 15px 0px 15px;
       font-size: 16px;
-      min-width: 310px;
     }
 
 
@@ -172,7 +170,7 @@
 
     #G3 {
       background-color: rgba(14,22,26,0.6);
-      margin: 6px 5px 6px 5px;
+      margin: 6px 4px 6px 4px;
       padding: 4px 5px;
       border-radius: 8px;
       border: solid 2px rgba(31,29,41,0.2);
@@ -237,7 +235,7 @@
       border-radius: 8px;
       padding-left: 13px;
       padding-right: 15px;
-      margin: 6px 5px 6px 5px;
+      margin: 6px 5px 6px 4px;
       border: solid 2px rgba(31,29,41,0.2);
       font-weight: normal;
       font-style: normal;

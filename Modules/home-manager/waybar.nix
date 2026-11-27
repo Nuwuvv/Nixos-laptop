@@ -38,6 +38,24 @@ let
       gtk-dialog-info "Sound Sink Switcher" "Switching to ''$NEXT_SINK_ID : ''$NEXT_SINK_NAME (''$ALIAS)" [] {} 5000 | \
       sed 's/(uint32 \([0-9]\+\),)/\1/g' > /tmp/sss.id)
   '';
+
+  # WireGuard toggle: the lock ignores a duplicate click while the first is handled;
+  # the signal makes the bar icon refresh immediately.
+  vpnToggle = pkgs.writeShellScript "vpn-toggle" ''
+    exec 9>/tmp/vpn-toggle.lock
+    ${pkgs.util-linux}/bin/flock -n 9 || exit 0
+    if systemctl is-active --quiet wg-quick-wg0; then
+      sudo systemctl stop wg-quick-wg0
+    else
+      sudo systemctl start wg-quick-wg0
+    fi
+    ${pkgs.procps}/bin/pkill -RTMIN+8 waybar
+    sleep 3
+  '';
+
+  # Hyprland >= 0.55 Lua dispatcher; "hyprctl dispatch workspace e-1" is rejected.
+  wsPrev = "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'";
+  wsNext = "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'";
      
 in  
 {
@@ -56,6 +74,8 @@ in
        height = 25;
        modules-left = [ "custom/launcher" "group/G1" "group/G2" ];
        modules-center = [ "mpris" ];
+       expand-center = true;
+       fixed-center = false;
        modules-right = [ "group/G3" "clock" ];
  
        "custom/launcher" = {
@@ -78,10 +98,10 @@ in
          active-only = false;
          all-outputs = true;
          disable-scroll = false;
-         on-scroll-up = "hyprctl dispatch workspace e-1";
-         on-scroll-down = "hyprctl dispatch workspace e+1";
+         on-scroll-up = wsPrev;
+         on-scroll-down = wsNext;
          format = "{icon}";
-         on-click = "activate";
+         # on-click = "activate";  # broken on Waybar 0.15 + Lua dispatcher
          min-length = 10;
          max-length = 10;
          format-icons = {
@@ -96,7 +116,8 @@ in
          exec = ''bash -c 'if systemctl is-active --quiet wg-quick-wg0; then echo "{\"text\": \"󰇧\", \"class\": \"connected\"}"; else echo "{\"text\": \"󰇧\", \"class\": \"disconnected\"}"; fi' '';
          return-type = "json";
          interval = 5;
-         on-click = "bash -c 'systemctl is-active --quiet wg-quick-wg0 && sudo systemctl stop wg-quick-wg0 || sudo systemctl start wg-quick-wg0'";
+         on-click = "${vpnToggle}";
+         signal = 8;
          tooltip = false;
        };
 
@@ -129,7 +150,7 @@ in
 
        "backlight" = {
          device = "amdgpu_bl2";
-         format = "<span color='#e1ad30' size='14000' >{icon}</span>   <span color='#FDFDFD'>{percent}%</span>";
+         format = "<span color='#e1ad30' size='16100' >{icon}</span> <span color='#FDFDFD'>{percent}%</span>";
          format-icons = [ "󱩎" "󱩏" "󱩐" "󱩑" "󱩒" "󱩓" "󱩔" "󱩕" "󱩖" "󰛨" ];
          on-scroll-up = "brightnessctl -e4 -n2 set 2%+";
          on-scroll-down = "brightnessctl -e4 -n2 set 2%-";
@@ -139,15 +160,17 @@ in
        "mpris" = {
          format = "{player_icon}  {status_icon}  {title} - {artist}";
          format-paused = "{player_icon}  {status_icon}  {title} - {artist}";
-         max-length = 40;
+         max-length = 30;
+         expand = true;
+         justify = "center";
          on-scroll-up = "playerctld shift";
          on-scroll-down = "playerctld shift";
          player-icons = {
            default = "󰎈";
            mpv = "";
            vlc = "<span color='#E85E00'>󰕼</span>";
-           spotify = "<span size='13000' color='#1DB954'></span>";
-           spotify_player = "<span size='13000' color='#1DB954'></span>";
+           spotify = "<span size='14950' color='#1DB954'></span>";
+           spotify_player = "<span size='14950' color='#1DB954'></span>";
            brave = "<span font='normal Font Awesome 6 Free' color='#ed7009'></span>";
          };
          status-icons = {
@@ -158,8 +181,8 @@ in
        };
 
        "bluetooth" = {
-         format-on = "<span size='14000'>󰂯</span>";
-         format-off = "<span size='14000' foreground='#f37061'>󰂲</span>";
+         format-on = "<span size='16100'>󰂯</span>";
+         format-off = "<span size='16100' foreground='#f37061'>󰂲</span>";
          on-click = "kitty --class floating -e bluetuith";
          on-click-right = "bluetoothctl power off";
        };
@@ -186,10 +209,10 @@ in
 
        "network" =  {
          interface = "wlp4s0";
-         format-wifi = "<span color='#4caca9' size='16000'>{icon}</span><span rise='2500'>  {bandwidthDownBits}</span>"; 
-         format-disconnected = "<span color='#5f0000' size='16000'>󰤮</span>  Offline";
-         format-disabled = "<span color='#0c0d0d size='16000''>󰤬</span>  Disabled";
-         format-linked = "<span color='#4caca9' size='16000'></span>  {bandwithDownBits}";
+         format-wifi = "<span color='#4caca9' size='18400'>{icon}</span><span rise='2500'>  {bandwidthDownBits}</span>"; 
+         format-disconnected = "<span color='#5f0000' size='18400'>󰤮</span>  Offline";
+         format-disabled = "<span color='#0c0d0d size='18400''>󰤬</span>  Disabled";
+         format-linked = "<span color='#4caca9' size='18400'></span> {bandwithDownBits}";
          format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
          tooltip-format-wifi = "{essid} {signalStrength}%\n{ipaddr}";
          tooltip-format-disconnected = "Disconnected";
@@ -199,31 +222,31 @@ in
        };
 
        "disk" = {
-         format = "<span color='#c574dd' size='15000'></span><span rise='2500'>   {}%</span>";
+         format = "<span color='#c574dd' size='17250'></span><span rise='2500'> {}%</span>";
          format-alt = "   {used}/{total} GiB";
          interval = 20;
          path = "/";
        };
 
        "memory" = {
-         format = "<span color='#f0b92f' size='15000'></span><span rise='2500'>  {}%</span>";
-         format-alt = "<span color='#f0b92f' size='15000'></span>  {used}/{total} GiB";
+         format = "<span color='#f0b92f' size='17250'></span><span rise='2500'> {}%</span>";
+         format-alt = "<span color='#f0b92f' size='17250'></span>  {used}/{total} GiB";
          interval = 5;
        };
 
        "cpu" = {
-         format = "<span color='#ec407a' size='15000'>󰍛</span><span rise='2500'>   {usage}%</span>";
+         format = "<span color='#ec407a' size='17250'>󰍛</span><span rise='2500'> {usage}%</span>";
          format-alt = "󰍛   {avg_frequency} GHz";
          interval = 55;
        };
 
        "pulseaudio" = {
-         format = "<span color='#5c64f3' size='16000'>{icon}</span><span rise='2500'>  {volume}%</span>";
-         format-muted = "<span size='15000' foreground='#f37061'>󰝟</span>  {volume}%";
+         format = "<span color='#5c64f3' size='18400'>{icon}</span><span rise='2500'>  {volume}%</span>";
+         format-muted = "<span size='17250' foreground='#f37061'>󰝟</span> {volume}%";
          format-icons = {
-           headphone = " ";
+           headphone = "";
            hands-free = "";
-           headset = " ";
+           headset = "";
            phone = "";
            portable = "";
            car = "";
@@ -254,10 +277,10 @@ in
            warning = 30;
            critical = 15;
          };
-         format = "<span color='#f2a272' size='16000'>{icon}</span><span rise='2500'>    {capacity}%</span>";
-         format-charging = "<span color='#a7aa1a' size='15000'></span><span rise='2500'>   {capacity}%</span>";
-         format-plugged = "<span color='#85fe92' size='15000'>󰚥</span><span rise='2500'>  {capacity}%</span>";
-         format-full = "<span color='#85fe92' size='15000'></span><span rise='2500'>    {capacity}%</span>";
+         format = "<span color='#f2a272' size='16000'>{icon}</span><span rise='2500'> {capacity}%</span>";
+         format-charging = "<span color='#a7aa1a' size='15000'></span><span rise='2500'> {capacity}%</span>";
+         format-plugged = "<span color='#85fe92' size='15000'>󰚥</span><span rise='2500'> {capacity}%</span>";
+         format-full = "<span color='#85fe92' size='15000'></span><span rise='2500'> {capacity}%</span>";
          format-icons = [ "" "" "" "" "" ];
          tooltip-format = "{timeTo} - {capacity}%\nPower: {power}W";
          on-click = "sudo tlp fullcharge";
@@ -265,7 +288,7 @@ in
 
        "clock" = {
          interval = 1;
-         format = " {:%a  %B %d  <span color='#8897f4' size='13000'>󰥔</span>  %H:%M}";
+         format = " {:%a  %B %d  <span color='#8897f4' size='14950'>󰥔</span>  %H:%M}";
          format-alt = "  {:%H:%M}";
          tooltip-format = "<tt>{calendar}</tt>";
          calendar = {
@@ -301,10 +324,10 @@ in
          active-only = false;
          all-outputs = true;
          disable-scroll = false;
-         on-scroll-up = "hyprctl dispatch workspace e-1";
-         on-scroll-down = "hyprctl dispatch workspace e+1";
+         on-scroll-up = wsPrev;
+         on-scroll-down = wsNext;
          format = "{icon}";
-         on-click = "activate";
+         # on-click = "activate";  # broken on Waybar 0.15 + Lua dispatcher
          format-icons = {
            urgent = "";
            active = "";
@@ -330,8 +353,8 @@ in
        };
 
        "pulseaudio" = {
-         format = "<span size='15000'>{icon}</span>  {volume}%";
-         format-muted = "<span size='15000' foreground='#f37061'>󰝟</span>  {volume}%";
+         format = "<span size='17250'>{icon}</span>  {volume}%";
+         format-muted = "<span size='17250' foreground='#f37061'>󰝟</span>  {volume}%";
          format-icons = {
            headphone = " ";
            hands-free = "";
@@ -384,10 +407,10 @@ in
          active-only = false;
          all-outputs = true;
          disable-scroll = false;
-         on-scroll-up = "hyprctl dispatch workspace e-1";
-         on-scroll-down = "hyprctl dispatch workspace e+1";
+         on-scroll-up = wsPrev;
+         on-scroll-down = wsNext;
          format = "{icon}";
-         on-click = "activate";
+         # on-click = "activate";  # broken on Waybar 0.15 + Lua dispatcher
          format-icons = {
            urgent = "";
            active = "";
@@ -407,7 +430,7 @@ in
            mpv = "";
            vlc = "<span color='#E85E00'>󰕼</span>";
            spotify = "<span color='#1DB954'></span>";
-           spotify_player = "<span size='13000' color='#1DB954'></span>";
+           spotify_player = "<span size='14950' color='#1DB954'></span>";
            brave = "<span font='normal Font Awesome 6 Free' color='#ed7009'></span>";
          };
          status-icons = {
@@ -434,8 +457,8 @@ in
        };
 
        "pulseaudio" = {
-         format = "<span size='16000'>{icon}</span>  {volume}%";
-         format-muted = "<span size='16000' foreground='#f37061'>󰝟</span>  {volume}%";
+         format = "<span size='18400'>{icon}</span>  {volume}%";
+         format-muted = "<span size='18400' foreground='#f37061'>󰝟</span>  {volume}%";
          format-icons = {
            headphone = " ";
            hands-free = "";
